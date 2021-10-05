@@ -49,7 +49,7 @@ if($_GET["logout"]== 1 AND $_SESSION['id']) {
 			$_SESSION['id']=$document['_id'];
           	$_SESSION['username'] = $username;
           	$_SESSION['success'] = "You are now logged in";
-			header("Location: ../vinWork/homepage.php");
+			header("Location: module/homepage.php");
 		} 
 	}
 		

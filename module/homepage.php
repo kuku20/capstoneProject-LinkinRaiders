@@ -1,5 +1,5 @@
 <?php 
-	require ('../../vendor/autoload.php');
+	require ('../vendor/autoload.php');
  	session_start();
  	$client = new MongoDB\Client('mongodb+srv://data2u:IMpSIo53MwLE0YwC@data2u.f9hzo.mongodb.net/datattu');
 	session_start(); 
@@ -18,11 +18,11 @@
 		}
  ?>
 
-<?php require('components/head.inc.php'); ?>
-<?php require('components/sideBar.inc.php'); ?>
+<?php require('components/inc/head.php'); ?>
+<?php require('components/inc/sideBar.php'); ?>
 <div class="home_content">
     <div class="text">Dashboard Content</div>
     <h1 class="text">username: <?php echo $_SESSION['username'] ?></h1>
     <h1 class="text">userID: <?php echo $_SESSION['id'] ?></h1>
 </div>
-<?php require('components/footer.inc.php'); ?>
+<?php require('components/inc/footer.php'); ?>
