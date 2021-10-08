@@ -4,7 +4,7 @@
 <head>
 	<title></title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/signup_signin.css">
 </head>
 <body>
 	<button id="btnPopup">CREATE ACCOUNT</button>
