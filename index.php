@@ -22,8 +22,8 @@ if($_GET["logout"]== 1 AND $_SESSION['id']) {
         <div class="login">
             <form action="index.php" method="post">
                 <h2>Login</h2>
-                <input type="text" name="username" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
+                <input type="text" name="username" placeholder="Username" required="">
+                <input type="password" name="password" placeholder="Password" required="">
                 <?php require_once ('components/security/login.php');?>
                 <button class="loginbtn" type="submit" name="user_login">Sign In</button>   
             </form>

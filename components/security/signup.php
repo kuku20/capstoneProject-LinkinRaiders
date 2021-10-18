@@ -54,9 +54,10 @@
  		$collection = $client->datattu->ttu;
  		$checkExistUser = $collection->findOne(['username' => $username]);
  		if($checkExistUser){
- 			// echo '<script type="text/javascript">';
-			// echo ' alert("Username alrady exists, Try Login!")';  //not showing an alert box.
-			// echo '</script>';
+ 			array_push($errors, "Username alrady exists, Try Login!");
+ 			echo '<script type="text/javascript">';
+			echo ' alert("Username alrady exists, Try Login!")';  //not showing an alert box.
+			echo '</script>';
  		}
  		if(count($errors)==0){
  		// 	echo '<script type="text/javascript">';
@@ -65,10 +66,12 @@
  			echo '<script type="text/javascript">';
 			echo ' alert("Create success!!")';  //not showing an alert box.
 			echo '</script>';
+			$pass = md5($password_1);
+
 			$insertOneResult = $collection->insertOne([
     		'username' => $username,
     		'email' => $email,
-    		'password' => $password,
+    		'password' => $pass,
 			]);
  		}else{
  			echo '<script type="text/javascript">';
