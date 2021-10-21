@@ -2,7 +2,7 @@
 require ('../../vendor/autoload.php'); 
 require_once ('../../config.php');
 session_start();
-
+error_reporting(0);
 $g = new \Google\Authenticator\GoogleAuthenticator();
 
 if (isset($_POST['user_code'])) {

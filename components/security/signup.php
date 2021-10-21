@@ -31,6 +31,7 @@
 <?php 
 	 // require_once ('../../config.php');
 	session_start();
+	error_reporting(0);
 	$username = "";
 	$password = "";
 	$email = "";
