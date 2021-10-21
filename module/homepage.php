@@ -1,7 +1,7 @@
 <?php 
 	require ('../vendor/autoload.php');
  	session_start();
- 	$client = new MongoDB\Client('mongodb+srv://data2u:IMpSIo53MwLE0YwC@data2u.f9hzo.mongodb.net/datattu');
+ 	$client = new MongoDB\Client('mongodb+srv://data2u:i8AohiQaOzxPEpIc@data2u.f9hzo.mongodb.net/datattu');
 	session_start(); 
 	if (!isset($_SESSION['username'])) {
 	  	$_SESSION['msg'] = "You must log in first";
