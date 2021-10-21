@@ -1,8 +1,7 @@
 <?php 
-require ('vendor/autoload.php');
+
 require_once ('config.php');
 require_once ('components/security/signup.php');
-
  ?>
  <?php
 session_start();

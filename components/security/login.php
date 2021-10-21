@@ -4,8 +4,7 @@
 	}
 // login==========================
 	require ('vendor/autoload.php');
-	require ('config.php');
-	// $client = new MongoDB\Client('mongodb+srv://data2u:i8AohiQaOzxPEpIc@data2u.f9hzo.mongodb.net/datattu');
+	$client = new MongoDB\Client('mongodb+srv://data2u:6iCNVznyS9xm2VXU@data2u.f9hzo.mongodb.net/datattu');
 	$username = "";
 	$password    = "";
 	if (isset($_POST['user_login'])) {
@@ -18,15 +17,7 @@
 			$_SESSION['id']=$document['_id'];
           	$_SESSION['username'] = $username;
           	$_SESSION['success'] = "You are now logged in";
-
-          	if ($document['google_secret']==" "){
-          		$_SESSION['google_require']='accepted';
-          		header("Location: module/homepage.php");
-          	}else{
-          		$_SESSION['secret'] = $document['google_secret'];
-          		header("Location: components/security/validated_google_auth.php");
-          	}
-			
+			header("Location: module/homepage.php");
 		} 
 		else{
 		function_alert("Wrong Password or Username!!!!");
