@@ -30,15 +30,7 @@
 
 <?php 
 	 // require_once ('../../config.php');
-<<<<<<< HEAD
-	session_start();
-<<<<<<< HEAD
-	error_reporting(0);
-=======
 
->>>>>>> parent of 54c4d8e (config.php)
-=======
->>>>>>> parent of 7bc82b9 (update error version php)
 	$username = "";
 	$password = "";
 	$email = "";
@@ -79,15 +71,7 @@
 			$insertOneResult = $collection->insertOne([
     		'username' => $username,
     		'email' => $email,
-<<<<<<< HEAD
     		'password' => $password_1,
-<<<<<<< HEAD
-    		'google_secret'=>' ',
-=======
-    		'password' => $pass,
->>>>>>> parent of 26c1a47 (Update signup.php)
-=======
->>>>>>> parent of 54c4d8e (config.php)
 			]);
  		}else{
  			echo '<script type="text/javascript">';
