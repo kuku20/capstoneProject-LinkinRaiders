@@ -70,8 +70,12 @@
 			$insertOneResult = $collection->insertOne([
     		'username' => $username,
     		'email' => $email,
+<<<<<<< HEAD
     		'password' => $password_1,
     		'google_secret'=>' ',
+=======
+    		'password' => $pass,
+>>>>>>> parent of 26c1a47 (Update signup.php)
 			]);
 			// logined
 			$getnewuser = $collection->findOne(['username' => $username]);
