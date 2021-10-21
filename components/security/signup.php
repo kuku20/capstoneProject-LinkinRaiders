@@ -18,7 +18,7 @@
  			<input type="password" name="password1" placeholder="Password" required="true">
  			<input type="password" name="password2" placeholder="Repeat-Password" required="true">
  			<br>
-			<button id="signmeup" class="SignUpBtn" type="submit" name="user_signup">Sign Up</button>
+			<button id="signmeup" class="SignUpBtn" type="submit" name="user_signup" >Sign Up</button>
 		</form>
 	</div>
 	<!-- <div id="signUpSuccess">
@@ -30,7 +30,7 @@
 
 <?php 
 	 // require_once ('../../config.php');
-
+	session_start();
 	$username = "";
 	$password = "";
 	$email = "";
@@ -63,27 +63,42 @@
  		// 	echo '<script type="text/javascript">';
 			// echo  $error;  //not showing an alert box.
 			// echo '</script>';
- 			echo '<script type="text/javascript">';
-			echo ' alert("Create success!!")';  //not showing an alert box.
-			echo '</script>';
+ 			
 			$pass = md5($password_1);
-
+			$_SESSION['username'] = $username;
 			$insertOneResult = $collection->insertOne([
     		'username' => $username,
     		'email' => $email,
     		'password' => $password_1,
+    		'google_secret'=>' ',
 			]);
+			// logined
+			$getnewuser = $collection->findOne(['username' => $username]);
+			$_SESSION['id']=$getnewuser['_id'];
+			echo '<script type="text/javascript">';
+			echo ' alert("Create success!!")'; 
+			echo '</script>';
+			// offer 2fa or do later
+		 	echo '<script type="text/javascript"> ';  
+			// echo ' function openulr(newurl) {';  
+		    echo '  if (confirm("DO YOU WANT TO ADD GOOGLE AUTHENTICATOR TO YOUR ACCOUNT?")) {';  
+		    echo '    location.href = "components/security/comfirm_google_auth.php";';  
+		    // echo '    header("Location: module/homepage.php");';  
+		    echo '  }'; 
+		    echo 'else{'; 
+		    	$_SESSION['google_require']='accepted';
+		    // echo '    location.href = "module/homepage.php";';
+		    echo '    location.href = "module/homepage.php";';
+		    echo '}';  
+		    echo '</script>'; 
+			
+			
+			
  		}else{
  			echo '<script type="text/javascript">';
 			echo  $error;  //not showing an alert box.
 			echo '</script>';
  		}
-
-
-
-
- 		
- 			
 			
 		// <a href="components/security/login.php">
 			// header('location: index.php');
@@ -92,6 +107,7 @@
 
 
  ?>
+
 <?php if (count($errors) > 0) : ?>
   <div class="message error validation_errors" >
   	<?php foreach ($errors as $error) : ?>
