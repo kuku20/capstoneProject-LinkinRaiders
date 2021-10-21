@@ -32,10 +32,13 @@
 	 // require_once ('../../config.php');
 <<<<<<< HEAD
 	session_start();
+<<<<<<< HEAD
 	error_reporting(0);
 =======
 
 >>>>>>> parent of 54c4d8e (config.php)
+=======
+>>>>>>> parent of 7bc82b9 (update error version php)
 	$username = "";
 	$password = "";
 	$email = "";

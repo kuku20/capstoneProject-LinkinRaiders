@@ -4,7 +4,6 @@ require ('../../vendor/autoload.php');
 require_once ('../../config.php'); ?>
 <?php 
     session_start();
-    error_reporting(0);
     $g = new \Google\Authenticator\GoogleAuthenticator();
     // generate for each user
     $secret = $g->generateSecret();
