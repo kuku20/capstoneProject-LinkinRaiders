@@ -1,13 +1,13 @@
 <ul class="nav_list">
             <li>
-                <a href = "#">
+                <a href = "homepage.php">
                     <i class='bx bx-grid-alt'></i>
                     <span class = "links_name">Dashboard</span>
                 </a>
                 <span class = "tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="#">
+                <a href="googlemap.php">
                     <i class='bx bx-map-alt' ></i>
                     <span class="links_name">Campus Map</span>
                 </a>
@@ -35,7 +35,7 @@
                 <span class = "tooltip">Translator</span>
             </li>
             <li>
-                <a href="#">
+                <a href="usersetting.php">
                     <i class='bx bxs-cog'></i>
                     <span class="links_name">Setting</span>
                 </a>

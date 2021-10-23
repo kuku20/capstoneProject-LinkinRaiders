@@ -5,32 +5,13 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/signup_signin.css">
 </head>
-<body>
-	<button id="btnPopup">CREATE ACCOUNT</button>
-	
-	<div id="signUpPopup">
-		<form id="showForm" method="post">
-			<h1 id="closeform">X</h1>
-			<h2>Sign Up	</h2>
-			<p>It's quick and easy.</p>
- 			<input type="text" name="username" placeholder="Username" required="true">
- 			<input type="email" name="email" placeholder="Email">
- 			<input type="password" name="password1" placeholder="Password" required="true">
- 			<input type="password" name="password2" placeholder="Repeat-Password" required="true">
- 			<br>
-			<button id="signmeup" class="SignUpBtn" type="submit" name="user_signup">Sign Up</button>
-		</form>
-	</div>
-	<!-- <div id="signUpSuccess">
-		<h1>SUCCESS TO SIGN UP</h1>
-	</div> -->
-	
+<body>	
 </body>
 </html>
 
 <?php 
 	 // require_once ('../../config.php');
-
+	session_start();
 	$username = "";
 	$password = "";
 	$email = "";
@@ -42,6 +23,12 @@
 		$email = $_POST['email'];
 		$password_1 = $_POST['password1'];
 		$password_2 = $_POST['password2'];
+
+		$questionCover = $_FILES["cover"];
+		$image_data = array( 
+		"type" => "MCQ",
+      	"cover" => new MongoDB\BSON\Binary(file_get_contents($questionCover["tmp_name"]), MongoDB\BSON\Binary::TYPE_GENERIC),
+  			); 
 		// by adding (array_push()) corresponding error unto $errors array
 		// by adding (array_push()) corresponding error unto $errors array
 		if (empty($username)) { array_push($errors, "Username is required"); }
@@ -63,27 +50,47 @@
  		// 	echo '<script type="text/javascript">';
 			// echo  $error;  //not showing an alert box.
 			// echo '</script>';
- 			echo '<script type="text/javascript">';
-			echo ' alert("Create success!!")';  //not showing an alert box.
-			echo '</script>';
+ 			
 			$pass = md5($password_1);
-
+			$_SESSION['username'] = $username;
 			$insertOneResult = $collection->insertOne([
-    		'username' => $username,
-    		'email' => $email,
+    		'username' 	=> $username,
+    		'name'		=> '',
+    		'email' 	=> $email,
+    		'gender'	=> '',
+    		'role'		=> '',
     		'password' => $password_1,
+    		'google_secret'=>' ',
+    		'image'=>$image_data,
 			]);
+			// logined
+			$getnewuser = $collection->findOne(['username' => $username]);
+			$_SESSION['id']=$getnewuser['_id'];
+			$_SESSION['image'] = $getnewuser['image'];
+			echo '<script type="text/javascript">';
+			echo ' alert("Create success!!")'; 
+			echo '</script>';
+			// offer 2fa or do later
+		 	echo '<script type="text/javascript"> ';  
+			// echo ' function openulr(newurl) {';  
+		    echo '  if (confirm("DO YOU WANT TO ADD GOOGLE AUTHENTICATOR TO YOUR ACCOUNT?")) {';  
+		    echo '    location.href = "components/security/comfirm_google_auth.php";';  
+		    // echo '    header("Location: module/homepage.php");';  
+		    echo '  }'; 
+		    echo 'else{'; 
+		    	$_SESSION['google_require']='accepted';
+		    // echo '    location.href = "module/homepage.php";';
+		    echo '    location.href = "module/homepage.php";';
+		    echo '}';  
+		    echo '</script>'; 
+			
+			
+			
  		}else{
  			echo '<script type="text/javascript">';
 			echo  $error;  //not showing an alert box.
 			echo '</script>';
  		}
-
-
-
-
- 		
- 			
 			
 		// <a href="components/security/login.php">
 			// header('location: index.php');
@@ -92,6 +99,7 @@
 
 
  ?>
+
 <?php if (count($errors) > 0) : ?>
   <div class="message error validation_errors" >
   	<?php foreach ($errors as $error) : ?>
