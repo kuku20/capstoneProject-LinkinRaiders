@@ -24,11 +24,11 @@
 		$password_1 = $_POST['password1'];
 		$password_2 = $_POST['password2'];
 
-		$questionCover = $_FILES["cover"];
-		$image_data = array( 
-		"type" => "MCQ",
-      	"cover" => new MongoDB\BSON\Binary(file_get_contents($questionCover["tmp_name"]), MongoDB\BSON\Binary::TYPE_GENERIC),
-  			); 
+		// $questionCover = $_FILES["cover"];
+		// $image_data = array( 
+		// "type" => "MCQ",
+  //     	"cover" => new MongoDB\BSON\Binary(file_get_contents($questionCover["tmp_name"]), MongoDB\BSON\Binary::TYPE_GENERIC),
+  // 			); 
 		// by adding (array_push()) corresponding error unto $errors array
 		// by adding (array_push()) corresponding error unto $errors array
 		if (empty($username)) { array_push($errors, "Username is required"); }
@@ -61,7 +61,9 @@
     		'role'		=> '',
     		'password' => $password_1,
     		'google_secret'=>' ',
-    		'image'=>$image_data,
+    		// 'image'=>$image_data,
+    		'image'=>' ',
+    		'google_require' => false,
 			]);
 			// logined
 			$getnewuser = $collection->findOne(['username' => $username]);
@@ -74,13 +76,12 @@
 		 	echo '<script type="text/javascript"> ';  
 			// echo ' function openulr(newurl) {';  
 		    echo '  if (confirm("DO YOU WANT TO ADD GOOGLE AUTHENTICATOR TO YOUR ACCOUNT?")) {';  
-		    echo '    location.href = "components/security/comfirm_google_auth.php";';  
-		    // echo '    header("Location: module/homepage.php");';  
+		    	echo '    location.href = "components/security/comfirm_google_auth.php";';  
 		    echo '  }'; 
 		    echo 'else{'; 
-		    	$_SESSION['google_require']='accepted';
-		    // echo '    location.href = "module/homepage.php";';
-		    echo '    location.href = "module/homepage.php";';
+		    	$_SESSION['logined']='accepted';
+		    	// $_SESSION['google_require']=$getnewuser['google_require'];;
+		    	echo '    location.href = "module/homepage.php";';
 		    echo '}';  
 		    echo '</script>'; 
 			

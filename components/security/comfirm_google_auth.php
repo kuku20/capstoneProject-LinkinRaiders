@@ -52,10 +52,24 @@ require_once ('../../config.php');
                 <div class="form-group">
                     <p name="secret"><?php echo $secret ?></p>
                     <label for="code">Enter Authentication Code:</label>
+
                     <input type="text" name="code" placeholder="6 Digit Code" class="form-control">
+
+                </div>
+                <div>
+                    <a href="<?php echo $_SERVER['http_referrer']; ?>">Try New</a>
                 </div>
                 <div class="form-group">
                     <button type="submit" name="user_code" class="btn btn-primary">Validate</button>
+                </div>
+                <div>
+                    <a href="<?php 
+                    if(isset($_SESSION['page'])) {
+                        unset($_SESSION['page']);
+                        echo "../../module/usersetting.php";
+                    }else{
+                        echo "../../module/homepage.php";
+                    } ?>">LATTER</a>
                 </div>
             </form>
 

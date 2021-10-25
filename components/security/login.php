@@ -20,9 +20,10 @@
           	$_SESSION['success'] = "You are now logged in";
 
           	$_SESSION['image'] = $document['image'];
-
-          	if ($document['google_secret']==" "){
-          		$_SESSION['google_require']='accepted';
+          	// $_SESSION['google_require']=$document['google_require'];
+          	
+          	if ($document['google_require']==false){
+          		$_SESSION['logined']='accepted';
           		header("Location: module/homepage.php");
           	}else{
           		$_SESSION['secret'] = $document['google_secret'];

@@ -1,7 +1,7 @@
 <?php
 
 try {
-    $client = new MongoDB\Client('mongodb+srv://data2u:e2DsCNMzoqmjeIxc@data2u.f9hzo.mongodb.net/datattu');
+    $client = new MongoDB\Client('mongodb+srv://grabriel:lT2NJ49bghV8gTF5@data2u.f9hzo.mongodb.net/datattu');
     
     // $dbs = $mc->listDatabases();
     // echo "<p>List</p>";

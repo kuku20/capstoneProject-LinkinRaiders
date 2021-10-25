@@ -12,9 +12,14 @@ if (isset($_POST['user_code'])) {
 		$collection = $client->datattu->ttu;
         $collection->updateOne(
             ['username' => $_SESSION['username']],
-            ['$set' => ['google_secret' => $_SESSION['secret']]]
+            ['$set' => ['google_secret' => $_SESSION['secret']]],
         );
-        $_SESSION['google_require']='accepted';
+        $collection->updateOne(
+            ['username' => $_SESSION['username']],
+            ['$set' => ['google_require' => true]],
+        );
+        $_SESSION['google_require']=true;
+        $_SESSION['logined']='accepted';
 	  header("Location: ../../module/homepage.php");
 	} else {
 	  echo 'Invalid login';

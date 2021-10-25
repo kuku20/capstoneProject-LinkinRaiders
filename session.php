@@ -1,6 +1,6 @@
 <?php 
 	session_start(); 
-	if (!isset($_SESSION['username']) or $_SESSION['google_require']==null) {
+	if (!isset($_SESSION['username']) or $_SESSION['logined']==null) {
 	  	$_SESSION['msg'] = "You must log in first";
 	  	header('location: ../index.php');
 	}
@@ -10,7 +10,8 @@
 	}
 	if (isset($_GET['logout'])) {
 	    session_destroy();
-	    unset($_SESSION['username']);
+	    session_unset();
+	    // unset($_SESSION['username']);
 	    header("location: ../index.php");
 		}
 ?>
