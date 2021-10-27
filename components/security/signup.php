@@ -55,20 +55,19 @@
 			$_SESSION['username'] = $username;
 			$insertOneResult = $collection->insertOne([
     		'username' 	=> $username,
-    		'name'		=> '',
+    		'name'		=> 'none',
     		'email' 	=> $email,
-    		'gender'	=> '',
-    		'role'		=> '',
+    		'gender'	=> 'none',
+    		'role'		=> 'none',
     		'password' => $password_1,
     		'google_secret'=>' ',
     		// 'image'=>$image_data,
-    		'image'=>' ',
+    		'image'=>null,
     		'google_require' => false,
 			]);
 			// logined
 			$getnewuser = $collection->findOne(['username' => $username]);
 			$_SESSION['id']=$getnewuser['_id'];
-			$_SESSION['image'] = $getnewuser['image'];
 			echo '<script type="text/javascript">';
 			echo ' alert("Create success!!")'; 
 			echo '</script>';

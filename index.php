@@ -32,7 +32,7 @@ if($_GET["logout"]== 1 AND $_SESSION['id']) {
             <input type="email" name="email" placeholder="Email">
             <input type="password" name="password1" placeholder="Password" required="true">
             <input type="password" name="password2" placeholder="Repeat-Password" required="true">
-            <!-- <input types="file" name="cover" > -->
+            <!-- <input type="file" name="cover" > -->
             <br>
             <button id="signmeup" class="SignUpBtn" type="submit" name="user_signup" >Sign Up</button>
         </form>

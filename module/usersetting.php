@@ -4,13 +4,13 @@
 	require_once ('../session.php');
 $collection = $client->datattu->ttu;
 $document = $collection->findOne(['username' => $_SESSION['username']]);
+// call here to prevent refesh data
 $_SESSION['google_require']=$document['google_require'];
 $_SESSION['secret'] = $document['google_secret'];
+$_SESSION['image'] = $document['image'];
 $_SESSION['page'] = "thispage";
  ?>
-<?php 
-
-	
+<?php 	
 require('../components/inc/head.php');
 require('../components/inc/sideBar.php');
 require('../components/inc/footer.php'); 
@@ -18,84 +18,49 @@ require('../components/inc/footer.php');
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/usersetting.css">
 <div class="home_content">
-	<h1 class="text">Profile/icon: image</h1>
-	
-	
-	<img src="data:jpeg;base64,<?=base64_encode($_SESSION['image']->cover->getData())?> " />
-	<h1 class="text">username: <?php echo $_SESSION['username'] ?></h1>
-	<h2 class="text">Name: username(can change)</h2>
-	<h2 class="text">Email: email(can change)</h2>
-	<h2 class="text">Gender: null</h2>
-	<h2 class="text">Role: null</h2>
-	<!-- <h2 class="text">Interest:need update for group matcher</h2> -->
-	<p class="text"> </p>
-    <h1 class="text"></h1>
-    <h1 class="text">PassWord: update</h1>
-    <h1 class="text">my php: <?php $_SESSION['google_require'] ?></h1>
-    <h1 class="text">2FA <?php echo $_SESSION['secret'] ?> <p id="demo"></p>enabled /unenabled</h1>
-	<label class="switch">
-		<?php  
-		if ($_SESSION['google_require']==true) { 
-			echo '<input type="checkbox" id = "myQR" checked>';}
+	<h1 class="text">Profile <a href="../components/setting/updateProfile.php">Edit</a></h1> 
+	<div id = "imageprofile">
+		<?php
+		if ($_SESSION['image']!=null) { 
+			echo '<img class="avatar" src="data:jpeg;base64,';
+			echo base64_encode($_SESSION['image']->cover->getData());
+			echo'" />';}
 			else{
-				echo '<input type="checkbox" id = "myQR" >';
+				echo '<img class="avatar" src="../assets/userdefault.jpg" />';
 			}
-			?>
-			<!-- <input type="checkbox" id = "myQR" checked> -->
-	  	<span class="slider round"></span>
-	</label>
-	<button onClick="parent.location='test.php'">Change</button>
+		?>
+
+	</div>
+	<h1 class="text">Username: <?php echo $_SESSION['username'] ?></h1>
+	<h1 class="text">Name: <?php echo $document['name'] ?></h1>
+	<h1 class="text">Email: <?php echo $document['email'] ?></h1>
+	<h1 class="text">Gender: <?php echo $document['gender'] ?></h1>
+	<h1 class="text">Role: <?php echo $document['role'] ?></h1>
+
+    <!-- <h1 class="text">PassWord: update</h1> -->
+    <div class="text">
+    	2FA :
+		<?php  
+			if ($_SESSION['google_require']==true) { 
+				echo 'Enabled';}
+				else{
+					echo 'Unenabled';
+				}
+		?>
+		<button id = "myQR" onClick="parent.location='../components/setting/updateQR.php'">CHANGE</button>
+	</div>
+    <!-- <h1 class="text"><a href="">DELETE ACCOUNT</a></h1> -->
 	
-    <div class="result">
     
      
-	    
-	  	
-	
 
-<?php 
-    
-    // if ($_SESSION['google_require']==true) {
-    // 	echo '<label class="switch">';
-	   //  echo '<input type="checkbox" id = "myQR" checked>';
-	   //  echo '<span class="slider round"></span>;';
-	   //  echo '</label>';
-	   //  echo '<div class="result"></div>';
-    // 	# code...
-    // }else{
-    // 	echo '<div class="result"></div>';
-	   //  echo '<label class="switch">';
-	   //  echo '<input type="checkbox" id = "myQR" >';
-	   //  echo '<span class="slider round"></span>';
-	   //  echo '</label>';
-    // }
-	// echo '<script type="text/javascript">';
-	// echo ' let BtnEle = document.querySelector("#myQR");';   
-	// echo ' let resEle = document.querySelector(".result");';  
-	// echo ' let boolVal = false ;';
-  
-	// echo ' resEle.innerHTML = boolVal;';  
-	// echo ' BtnEle.addEventListener("click", () => {';  
-	// echo ' boolVal = !boolVal;'; 
-	// echo ' resEle.innerHTML = boolVal;';  
-
-	// echo ' });';   
-	// echo '</script>'; 
- ?>
+<!-- when click to the button change
+it will call this function to change the google_require
+then go to test.php -->
 <script >
-	
 	let BtnEle = document.querySelector("#myQR");
-	let resEle = document.querySelector(".result");
-	let boolVal = "<?php echo $_SESSION['google_require'] ?>";
-	resEle.innerHTML = boolVal;
 	BtnEle.addEventListener("click", () => {
-		boolVal = !boolVal;
-		resEle.innerHTML = boolVal;
 		"<?php $_SESSION['google_require'] = !$_SESSION['google_require'] ?>";
 	});
 </script>
 
-
-		</div>
-    <h1 class="text">DELETE ACCOUNT</h1>
-</div>

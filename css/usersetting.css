@@ -1,5 +1,27 @@
+.avatar {
+  vertical-align: middle;
+  margin-left:50px; 
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+#myQR{
+  width: 80px;
+  height: 30px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+.home_content{
+    /*position: absolute;
+    height: 100%;
+    width: calc(100% - 62px);
+    left: 62px;
+    transition: all 0.5s ease;*/
 
-.switch {
+    margin-top: 5%;
+    margin-left: 100px;
+}
+/*.switch {
   position: relative;
   display: inline-block;
   width: 60px;
@@ -55,4 +77,8 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-}
+}*/
+
+/*#imageprofile{
+  margin-left: 300px;
+}*/
