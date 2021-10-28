@@ -41,7 +41,7 @@
  	<h1 class="text"></h1>
  </div>
 
- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.jss"></script>
 <script>
 function getIdEvent(a) {
 	var idevent = "fadsfa";
