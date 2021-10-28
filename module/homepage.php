@@ -1,21 +1,24 @@
 <?php 
 	require ('../vendor/autoload.php');
  	session_start();
- 	$client = new MongoDB\Client('mongodb+srv://data2u:IMpSIo53MwLE0YwC@data2u.f9hzo.mongodb.net/datattu');
-	session_start(); 
+ 	$client = new MongoDB\Client('mongodb+srv://vin:PkWCp8BvSFNWNQ4e@data2u.f9hzo.mongodb.net/datattu');
+	
+	error_reporting(0);
 	if (!isset($_SESSION['username'])) {
 	  	$_SESSION['msg'] = "You must log in first";
 	  	header('location: ../index.php');
 	}
 	if ($_GET["logout"]== 1 AND $_SESSION['id']) {
-	  	session_destroy();
+		session_unset();
+		session_destroy();
 	    header('location: ../index.php');
 	}
 	if (isset($_GET['logout'])) {
+		session_unset();
 	    session_destroy();
 	    unset($_SESSION['username']);
 	    header("location: ../index.php");
-		}
+	}
  ?>
 
 <?php require('../components/inc/head.php'); ?>

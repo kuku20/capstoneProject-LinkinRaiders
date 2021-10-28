@@ -1,6 +1,6 @@
 <ul class="nav_list">
             <li>
-                <a href = "../../module/homepage.phps">
+                <a href = "homepage.php">
                     <i class='bx bx-grid-alt'></i>
                     <span class = "links_name">Dashboard</span>
                 </a>
@@ -14,7 +14,7 @@
                 <span class = "tooltip">Campus Map</span>
             </li>
             <li>
-                <a href = "../../module/chatpage.php">
+                <a href = "chatpage.php">
                     <i class='bx bxs-group'></i>
                     <span class="links_name">Group Matcher</span>
                 </a>
