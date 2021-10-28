@@ -48,6 +48,13 @@ require('../components/inc/footer.php');
 				}
 		?>
 		<button id = "myQR" onClick="parent.location='../components/setting/updateQR.php'">CHANGE</button>
+
+		<?php 
+			if($_SESSION['secret'] != " "){
+				echo '<a href="../components/security/comfirm_google_auth.php">UPDATE QR</a>';
+			}
+		 ?>
+		 <!-- <a href="../components/security/comfirm_google_auth.php">UPDATE QR</a> -->
 	</div>
     <!-- <h1 class="text"><a href="">DELETE ACCOUNT</a></h1> -->
 	
@@ -58,9 +65,11 @@ require('../components/inc/footer.php');
 it will call this function to change the google_require
 then go to test.php -->
 <script >
+	//let boolVal = "<?php //echo $_SESSION['google_require'] ?>";
 	let BtnEle = document.querySelector("#myQR");
 	BtnEle.addEventListener("click", () => {
 		"<?php $_SESSION['google_require'] = !$_SESSION['google_require'] ?>";
 	});
 </script>
+
 

@@ -69,7 +69,7 @@ require_once ('../../config.php');
                         echo "../../module/usersetting.php";
                     }else{
                         echo "../../module/homepage.php";
-                    } ?>">LATTER</a>
+                    } ?>">LATER</a>
                 </div>
             </form>
 

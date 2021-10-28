@@ -20,15 +20,23 @@
           	$_SESSION['success'] = "You are now logged in";
 
           	$_SESSION['image'] = $document['image'];
-          	// $_SESSION['google_require']=$document['google_require'];
+          	// admin page
+          	$_SESSION['google_require']=$document['google_require'];
+          	if($document['role']=="admin"){
+          		$_SESSION['admin']=$document['role'];
+          		$_SESSION['logined']='accepted';
+          		header("Location: module/adminhomepage.php");
+          	}
           	
-          	if ($document['google_require']==false){
+          	
+          	elseif($document['google_require']==false){
           		$_SESSION['logined']='accepted';
           		header("Location: module/homepage.php");
           	}else{
           		$_SESSION['secret'] = $document['google_secret'];
           		header("Location: components/security/validated_google_auth.php");
           	}
+          	
 			
 		} 
 		else{

@@ -1,3 +1,4 @@
+
 <ul class="nav_list">
             <li>
                 <a href = "homepage.php">
@@ -41,4 +42,16 @@
                 </a>
                 <span class = "tooltip">Setting</span>
             </li>
+            <!-- admin option display -->
+            <?php 
+                if(isset($_SESSION['admin'])){
+                    echo '<li>';
+                    echo '<a href = "adminhomepage.php">';
+                    echo    '<i class="bx bx-grid-alt"></i>';
+                    echo    '<span class = "links_name">Admin Dashboard</span>';
+                    echo '</a>';
+                    echo '<span class = "tooltip">Admin Dashboard</span>';
+                    echo '</li>';
+                } 
+            ?>
         </ul>
