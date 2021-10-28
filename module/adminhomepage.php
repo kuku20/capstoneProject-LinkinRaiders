@@ -10,22 +10,19 @@
 
  <div class="home_content">
  	<h1 class="text">HELLO ADMIN</h1>
- 	<h1 class="text">Display events need to comfirm!!</h1>
- 	<h1 class="text">id for each event(click here then go to the side to see event then design to accept or not)</h1>
- 	
-
-
+ 	<h1 class="text">These events need to comfirm!!</h1>
  	<?php 
 	 	$eventscollection = $client->datattu->events;
 		$event = $eventscollection->find(['permit' => false]);
 		foreach ($event as $document) {
 			echo '<div class="text">';
-				// echo $_SESSION['idevent']=$document['_id'];
-				echo '<a id= "your_click" value ="hihi"  href="#" onclick="getIdEvent(this)"  >topic: ';
+				// $_SESSION['ids'] = ;
+				echo '<a id= "sMsg" value ="';
+				echo $document['_id'];
+				echo ' "  href="../components/adminjob/eventbyadmin.php" onclick="getIdEvent(this)"  >topic: ';
 				echo $document['topic'];
 				echo'  need your decide </a>';
 			echo'  </div>';
-	    	// echo $document['_id'], "\n";
 
 		}
 
@@ -34,7 +31,7 @@
 
 
  	<!-- <a href="../components/adminjob/eventsbyadmin.php">event id</a> -->
- 	<a href="#" value ="hihi" onclick="getIdEvent(this)" >Test Link</a>
+ 	<!-- <a href="#" value ="hihi" onclick="getIdEvent(this)" >Test Link</a> -->
 
  	<h1 class="text">report account id= can delete it</h1>
  	<h1 class="text">assign role to some user....</h1>
@@ -43,31 +40,61 @@
 
  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
+// function getIdEvent(a) {
+// 	var idevent = "";
+// 	idevent = a.getAttribute("value");
+// 	// location.replace("../components/adminjob/eventsbyadmin.php");
+// 	console.log(idevent)
+// }
+// Function to change the content of t2
 function getIdEvent(a) {
-	var idevent = "fadsfa";
+  var idevent = "";
+	idevent = a.getAttribute("value");
+	// location.replace("../components/adminjob/eventsbyadmin.php");
+	console.log(idevent)
 	$.ajax({
-		type: "GET",
-		url: "../components/adminjob/eventsbyadmin.php",
-		data: {
-			idevent: idevent,
-		}
-	});
-	location.replace("../components/adminjob/eventsbyadmin.php");
+            type: "POST",
+            url: "../components/adminjob/eventholder.php",
+            data: {
+                idevent: idevent,
+            }
+        });
+}
+
+// // Add event listener to table
+// const el = document.getElementById("your_click");
+// el.addEventListener("click", getIdEvent, false);
+
+
+// const form = document.querySelector(".typing_area"),
+// inputField = form.querySelector(".msgInputField"),
+sendBtn1 = document.querySelector("#sMsg");
+
+$(document).ready(function() {
+    $('form').submit(function(e) {
+        e.preventDefault();
+    });
+});
+
+
+sendBtn1.onclick = function() {
+    $(document).ready(function() {
+    	var idevent = "";
+        idevent = a.getAttribute("value");
+        console.log(idevent)
+        $.ajax({
+            type: "POST",
+            url: "../components/adminjob/eventholder.php",
+            data: {
+                idevent: idevent,
+            }
+        });
+    });
+    
 }
 </script>
-
-<!-- <script type = "text/javascript">
-	// let idevent = document.querySelector("#your_click");
-function getevenid() {  
-		var deleteyes = 'delete';
-
-		$.ajax({
-			type: "GET",
-			url: "deleteaccount.php",
-			data: {
-				deleteyes: deleteyes,
-				}
-		});
-		location.replace("../../index.php");
-	}
-</script> -->
+<script>
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>
