@@ -39,7 +39,6 @@
 <a class="text" href="../components/adminjob/assignrole.php">cl</a>
 
 
-<<<<<<< HEAD
 	<input class="text" type="type" id="userrole" name="usernamerole" placeholder="Username" >
       <button onclick='functionConfirm("Which role would you assign?", function admin() {
         var userrole = document.getElementById("userrole").value;
@@ -56,23 +55,6 @@
       }, function user() {
         var userrole = document.getElementById("userrole").value;
         $.ajax({
-=======
- <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script>
-// function getIdEvent(a) {
-// 	var idevent = "";
-// 	idevent = a.getAttribute("value");
-// 	// location.replace("../components/adminjob/eventsbyadmin.php");
-// 	console.log(idevent)
-// }
-// Function to change the content of t2
-function getIdEvent(a) {
-  var idevent = "";
-	idevent = a.getAttribute("value");
-	// location.replace("../components/adminjob/eventsbyadmin.php");
-	console.log(idevent)
-	$.ajax({
->>>>>>> 841699990ed211acb9667a07706f6c6ec030a4e3
             type: "POST",
             url: "../components/adminjob/assignrole.php",
             data: {
@@ -99,31 +81,7 @@ function getIdEvent(a) {
  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 
 
-<<<<<<< HEAD
       
 
 
 <script src="../javascript/adminhomepage.js"></script>
-=======
-sendBtn1.onclick = function() {
-    $(document).ready(function() {
-    	var idevent = "";
-        idevent = a.getAttribute("value");
-        console.log(idevent)
-        $.ajax({
-            type: "POST",
-            url: "../components/adminjob/eventholder.php",
-            data: {
-                idevent: idevent,
-            }
-        });
-    });
-    
-}
-</script>
-<script>
-if ( window.history.replaceState ) {
-  window.history.replaceState( null, null, window.location.href );
-}
-</script>
->>>>>>> 841699990ed211acb9667a07706f6c6ec030a4e3
