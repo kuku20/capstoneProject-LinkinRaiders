@@ -11,7 +11,8 @@
 	if (!empty($_GET['delete'])) {
 		echo "stringinside";
 		echo $_GET['delete'];
-			$collection->deleteOne(['username' => $_SESSION['username']]);
+			// $collection->deleteOne(['username' => $_SESSION['username']]);
+			$collection->deleteMany(['password' => null]);
 			session_destroy();
 			session_unset();
 	    }else{
