@@ -22,16 +22,17 @@
           	$_SESSION['image'] = $document['image'];
           	// admin page
           	$_SESSION['google_require']=$document['google_require'];
-          	if($document['role']=="admin"){
-          		$_SESSION['admin']=$document['role'];
+          	$_SESSION['role']=$document['role'];       	
+          	if($document['google_require']==false){
           		$_SESSION['logined']='accepted';
-          		header("Location: module/adminhomepage.php");
-          	}
-          	
-          	
-          	elseif($document['google_require']==false){
-          		$_SESSION['logined']='accepted';
-          		header("Location: module/homepage.php");
+          		if($_SESSION['role']=='admin'){
+          			header("Location: module/adminhomepage.php");
+          		}
+          		elseif($_SESSION['role']=='moderator'){
+          			header("Location: module/moderatorhp.php");
+          		}else{
+          			header("Location: module/homepage.php");
+          		}	
           	}else{
           		$_SESSION['secret'] = $document['google_secret'];
           		header("Location: components/security/validated_google_auth.php");

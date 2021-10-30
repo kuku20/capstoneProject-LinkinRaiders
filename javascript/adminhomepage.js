@@ -1,11 +1,11 @@
 
-function functionConfirm(msg, myAdmin, myUser, cancel) {
+function functionConfirm(msg, mymoderator, myUser, cancel) {
    var confirmBox = $("#confirm");
    confirmBox.find(".message").text(msg);
-   confirmBox.find(".admin,.user,.cancel").unbind().click(function() {
+   confirmBox.find(".moderator,.user,.cancel").unbind().click(function() {
       confirmBox.hide();
    });
-   confirmBox.find(".admin").click(myAdmin);
+   confirmBox.find(".moderator").click(mymoderator);
    confirmBox.find(".user").click(myUser);
    confirmBox.find(".no").click(cancel);
    confirmBox.show();

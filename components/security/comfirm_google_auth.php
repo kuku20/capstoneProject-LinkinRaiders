@@ -1,19 +1,20 @@
 <?php 
 require ('../../vendor/autoload.php');
 require_once ('../../config.php'); 
+// require_once ('../sessionc.php');
 
 ?>
-
 <?php 
     session_start();
+    $_SESSION['newqr']= 'newqr';
     $g = new \Google\Authenticator\GoogleAuthenticator();
     // generate for each user
     $secret = $g->generateSecret();
     $_SESSION['secret'] = $secret;
     // test code
     // $secret = 'XVQ2UIGO75XRUKJO';
-    echo "Get a new Secret: $secret \n";
-    echo $_SESSION['username'] ;
+    // echo "Get a new Secret: $secret \n";
+    // echo $_SESSION['username'] ;
 
     // echo '<img src=" '.\Sonata\GoogleAuthenticator\GoogleQrUrl::generate($_SESSION['username'] , $secret, 'LINKINRAIDERS.COM').'" />';
 
@@ -25,58 +26,42 @@ require_once ('../../config.php');
     <meta charset="UTF-8">
     <title>Confirm User Device</title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/comfirm_google_auth.css">
 </head>
 <body>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-5 col-md-offset-3 well">
-            <h4>Application Authentication</h4>
-
-            <p>
-                Please download and install Google authenticate app on your phone, and scan following QR code to configure your device.
-            </p>
-
-            <div class="form-group">
-                <img src="<?php echo $qr_code; ?>">
+<div class="hero">
+    <div class="form-box">
+        <form id="qrcode" class="input-group" action="gasignup.php" method="post" enctype="multipart/form-data">
+            <h4 class="input-file">Application Authentication 
+                <a href="<?php echo $_SERVER['http_referrer']; ?>">Try New</a>
+            </h4>
+            <p class="input-file" >Please download and install Google authenticate app on your phone, and scan following QR code to configure your device.</p>
+            <!-- <div class="form-group"> -->
+            <img class="qrdisplay" src="<?php echo $qr_code; ?>">
                 
-            </div>
-            <form method="post" action="gasignup.php">
-                <?php
+            <!-- </div> -->
+            <?php
                 if ($error_message != "") {
                     echo '<div class="alert alert-danger"><strong>Error: </strong> ' . $error_message . '</div>';
                 }
-                ?>
-
-                <div class="form-group">
-                    <p name="secret"><?php echo $secret ?></p>
-                    <label for="code">Enter Authentication Code:</label>
-
-                    <input type="text" name="code" placeholder="6 Digit Code" class="form-control">
-
-                </div>
-                <div>
-                    <a href="<?php echo $_SERVER['http_referrer']; ?>">Try New</a>
-                </div>
-                <div class="form-group">
-                    <button type="submit" name="user_code" class="btn btn-primary">Validate</button>
-                </div>
-                <div>
-                    <a href="<?php 
-                    if(isset($_SESSION['page'])) {
-                        unset($_SESSION['page']);
-                        echo "../../module/usersetting.php";
-                    }else{
-                        echo "../../module/homepage.php";
-                    } ?>">LATER</a>
-                </div>
-            </form>
-
-            <div class="form-group">
-                <!-- Click here to <a href="index.php">Login</a> if you have already registered your account. -->
+            ?>
+            <p  name="secret"><?php echo $secret ?></p>
+            <label class="input-file" for="code">Enter Authentication Code:</label>
+            <input type="text" name="code" placeholder="6 Digit Code" class="input-field" autocomplete="off">
+                
+            <div class="input-file">
+                <button type="submit" class="validate-btn" name="user_code">Validate</button>
             </div>
-        </div>
+            <div class="skip">
+                <a  href="<?php 
+                if(isset($_SESSION['pagecomfirm'])) {
+                    unset($_SESSION['pagecomfirm']);
+                    echo "../../module/usersetting.php";
+                }else{
+                    echo "../../module/homepage.php";
+                } ?>">SKIP</a>   
+            </div>
+        </form>
     </div>
 </div>
 

@@ -18,9 +18,9 @@ if($_GET["logout"]== 1 AND $_SESSION['id']) {
     <title>LinkinRaiders</title>
     <!-- Google Fonts  -->
     <!-- <link rel="stylesheet" type="text/css" href=""> -->
-    <!-- <link rel="stylesheet" type="text/css" href="css/signup_signin.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/signup_signin.css">
     <!-- <link rel="stylesheet" href="../css/homeStyle.css"> -->
-    <link rel="stylesheet" type="text/css" href="css/webPageCss.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/webPageCss.css"> -->
 
  </head>
  <body>

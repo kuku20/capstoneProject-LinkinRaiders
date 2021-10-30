@@ -1,6 +1,7 @@
 <?php
 require ('../../vendor/autoload.php'); 
 require_once ('../../config.php');
+// require_once ('../sessionc.php');
 
 session_start();
 
@@ -20,31 +21,69 @@ if (isset($_POST['user_code'])) {
         );
         $_SESSION['google_require']=true;
         $_SESSION['logined']='accepted';
-	  header("Location: ../../module/homepage.php");
+        if($_SESSION['role']=='admin' or $_SESSION['role']=='moderator'){
+            header("Location: ../../module/adminhomepage.php");
+            }elseif($_SESSION['role']=='moderator'){
+                    header("Location: module/moderatorhp.php");
+                }
+                else{
+                header("Location: ../../module/homepage.php");
+            }
+        
 	} else {
-	  echo 'Invalid login';
-	}
+        echo '<script type="text/javascript">';
+        echo ' alert("Invalid Code")'; 
+        echo '</script>';
+    }
 }
 
 ?>
-
-
 
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
+    <link rel="stylesheet" href="../../css/comfirm_google_auth.css">
 </head>
 <body>
-	<div class="login">
-    <form action="validated_google_auth.php" method="post">
-        <h2>QR Code</h2>
-        <p><?php $_SESSION['google_require'] ?></p>
-        <input type="text" name="code" placeholder="QR code" required="">
-        <button class="loginbtn" type="submit" name="user_code">Validate</button>  
-    </form>
+    <div class="hero">
+    <div class="form-validated">
+
+        <form id="qrcode" class="input-group" action="validated_google_auth.php" method="post" enctype="multipart/form-data">
+            <h4><?php if(isset($_SESSION['newqr'])){
+            unset($_SESSION['newqr']);
+            echo '<script type="text/javascript">';
+            echo ' alert("Invalid Code")'; 
+            echo '</script>';
+        } ?></h4>
+            <label class="input-file" for="code">Enter Authentication Code Again:</label>
+            <input type="text" name="code" placeholder="6 Digit Code" class="input-field" autocomplete="off">
+                
+            <div class="input-file">
+
+
+                <button class="validate-btn" type="submit" name="user_code">Validate</button>  
+            </div>
+
+            <div class="skip">
+                <a  href="<?php 
+                if(isset($_SESSION['pagevalidated'])) {
+                unset($_SESSION['pagevalidated']);
+                echo "../../module/usersetting.php";
+                }else{
+                echo "../../module/homepage.php";
+            } ?>">SKIP</a>   
+            </div>
+        </form>
+    </div>
 </div>
+
+
+
+
+
+
 
 </body>
 </html>

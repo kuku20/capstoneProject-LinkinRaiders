@@ -34,7 +34,8 @@ body{
     display: flex;
     height: 50px;
     width: 100%;
-    align-items: center;
+    vertical-align: middle;
+    /*align-items: center;*/
     opacity: 0;
     pointer-events: none;
     transition: all 0.5s ease;

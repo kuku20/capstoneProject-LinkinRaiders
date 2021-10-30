@@ -31,26 +31,26 @@
 
  	<h1 class="text">report account id= can delete it</h1>
 
- 	<form  method="" enctype="multipart/form-data">
-	 	<h1 class="text">Assign role to user: </h1>
-	 	<!-- <input class="text" type="type" id="userrole" name="usernamerole" placeholder="Username" > -->
+<!--  	<form  method="" enctype="multipart/form-data">
+	 	
+	 	<input class="text" type="type" id="userrole" name="usernamerole" placeholder="Username" >
 	 	<button  type="submit" onclick="updaterole()">APPLY</button>
 	</form>
-<a class="text" href="../components/adminjob/assignrole.php">cl</a>
-
+<a class="text" href="../components/adminjob/assignrole.php">cl</a> -->
+<h1 class="text">Assign role to user: </h1>
 
 	<input class="text" type="type" id="userrole" name="usernamerole" placeholder="Username" >
-      <button onclick='functionConfirm("Which role would you assign?", function admin() {
+      <button onclick='functionConfirm("Which role would you assign?", function moderator() {
         var userrole = document.getElementById("userrole").value;
         $.ajax({
             type: "POST",
             url: "../components/adminjob/assignrole.php",
             data: {
                 userrole: userrole,
-                role : "admin",
+                role : "moderator",
             }
         });
-          alert("admin");
+          alert("moderator");
           alert(userrole);
       }, function user() {
         var userrole = document.getElementById("userrole").value;
@@ -65,12 +65,12 @@
         alert("user");
           alert(userrole);
       }
-      );'>submit</button>
+      );'class="text">Apply</button>
 
 
       	<div id="confirm">
          <div class="message"></div>
-         <button class="admin">admin</button>
+         <button class="moderator">moderator</button>
          <button class="user">user</button>
          <button class="cancel">Cancel</button>
       </div>

@@ -8,7 +8,8 @@ $document = $collection->findOne(['username' => $_SESSION['username']]);
 $_SESSION['google_require']=$document['google_require'];
 $_SESSION['secret'] = $document['google_secret'];
 $_SESSION['image'] = $document['image'];
-$_SESSION['page'] = "thispage";
+$_SESSION['pagecomfirm'] = "thepagecomfirm";
+$_SESSION['pagevalidated'] = "thepagevalidated";
  ?>
 <?php 	
 require('../components/inc/head.php');

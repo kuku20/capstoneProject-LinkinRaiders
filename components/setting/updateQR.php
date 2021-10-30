@@ -1,7 +1,7 @@
 <?php 
 require ('../../vendor/autoload.php'); 
 require_once ('../../config.php');
-require_once ('../../session.php');
+require_once ('../sessionc.php');
  ?>
 <?php 
 	if($_SESSION['secret'] == " "){
