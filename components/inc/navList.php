@@ -15,7 +15,7 @@
                 <span class = "tooltip">Campus Map</span>
             </li>
             <li>
-                <a href = "#">
+                <a href = "chatpage.php">
                     <i class='bx bxs-group'></i>
                     <span class="links_name">Group Matcher</span>
                 </a>
