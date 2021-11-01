@@ -134,17 +134,7 @@
 	</div>
 </div>
 <!-- outside content section -->
-<?php
-    function checkImg() {
-        if ($_SESSION['image']!=null) { 
-            echo '<img class="userPhoto" alt="user icon" src="data:jpeg;base64,';
-            echo base64_encode($_SESSION['image']->cover->getData());
-            echo'" />';}
-            else{
-                echo '<img class="userPhoto" src="../assets/profile_img.png" />';
-            }
-    }
-?>	
+	
 	
 	
 	
