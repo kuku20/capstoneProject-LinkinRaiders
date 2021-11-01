@@ -137,11 +137,11 @@
 <?php
     function checkImg() {
         if ($_SESSION['image']!=null) { 
-            echo '<img class="avatar" src="data:jpeg;base64,';
+            echo '<img class="userPhoto" alt="user icon" src="data:jpeg;base64,';
             echo base64_encode($_SESSION['image']->cover->getData());
             echo'" />';}
             else{
-                echo '<img class="avatar" src="../assets/profile_img.png" />';
+                echo '<img class="userPhoto" src="../assets/profile_img.png" />';
             }
     }
 ?>	
