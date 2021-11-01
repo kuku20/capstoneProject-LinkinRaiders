@@ -1,3 +1,12 @@
+<?php 
+  require ('../vendor/autoload.php');
+  require_once ('../config.php');
+  require_once ('../session.php');
+  // require('../components/inc/head.php');
+  // require('../components/inc/sideBar.php');
+  // require('../components/inc/footer.php'); 
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -10,45 +19,62 @@
   }
   #map{
     height: 500px;
-    width: 90%;
-    margin-left: 120px;
+    width: 100%;
   }
-  #name1{
-    margin-left: 120px;
+  table{
+    width: 20%;
+    background-color: red;
+  }
+  body {
+    background-image: url("../assets/background.jpg")
+  }
+  input[type=text] {
+    width: 20%;
+    box-sizing: border-box;
+}
+  .button{
+    background-color:black;
+    color:white;
+    border-radius: 12px;
   }
   </style>
 </head>
 <body>
-<form id = "name1" onsubmit="return search()";>
-    <label for "location">Location:</label><br>
-    <input type="text" id="location" name="location"><br>
+  <div class="home_content">
+  <div class="text">
+<form onsubmit="return search()"; class="a">
+  <label for "location">Location:</label><br>
+  <input type="text" id="location" name="location"><br>
 </form>
-  <div id="map"></div>
-  <table id = "name1">
-        <tr>
-            <th>Name</th>
-            <td id="name">Texas Tech</td>
-          </tr>
-          <tr>
-            <th>Address</th>
-            <td id="address">Texas Tech Drive</td>
-          </tr>
-          <tr>
-            <th>Info</th>
-            <td id = "info">Default info about tech</td>
-          </tr>
-  </table>
-<button id = "name1" type="button" onclick="return route()">Route</button>
-<div id="msg"></div>
+<button type="button" onclick="return route()" class = "button">Route</button>
+<div id="map"></div>
+<table>
+<tr>
+    <th>Name</th>
+    <td id="name">Texas Tech</td>
+  </tr>
+  <tr>
+    <th>Address</th>
+    <td id="address">Texas Tech Drive</td>
+  </tr>
+  <tr>
+    <th>Info</th>
+    <td id = "info">Default info about tech</td>
+  </tr>
+</table>
 
+<div id="msg"></div>
+    </div>
+  </div>
 <script>
 //constant declarations
 const lubCenter = {lat:33.58438431248001, lng:-101.87831451579754}
 
 const murdoughHall = {lat: 33.58401852803292, lng: -101.88098932860129, name: "Murdough Hall",address: "address 1", info: "info here 1"}
 const experimentalSciences = {lat:33.58547469574215, lng: -101.87896067815234, name: "Experemental",address: "address 2", info: "info here 2"}
+const studentUnion = {lat:33.581506115508404, lng:-101.87474868853408 , name: "Student Union Building", address: "address 3", info: "info here 3"}
 
-const markerArr = [murdoughHall, experimentalSciences];
+const markerArr = [murdoughHall, experimentalSciences, studentUnion];
 
 
 // Note: This example requires that you consent to location sharing when
@@ -75,7 +101,7 @@ function initMap() {
   var updateBool = 0;
   map = new google.maps.Map(document.getElementById("map"), {
     center: lubCenter,
-    zoom: 17,
+    zoom: 15,
   });
   infoWindow = new google.maps.InfoWindow();
   geoLocator(map, infoWindow);

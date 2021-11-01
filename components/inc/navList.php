@@ -22,7 +22,7 @@
                 <span class = "tooltip">Group Matcher</span>
             </li>
             <li>
-                <a href="#">
+                <a href="eventpage.php">
                     <i class='bx bx-calendar-event' ></i>
                     <span class="links_name">Student Events</span>
                 </a>
