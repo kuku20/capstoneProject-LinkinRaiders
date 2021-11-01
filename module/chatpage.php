@@ -29,7 +29,7 @@
     <title>LinkinRaider</title>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/chatStyle.css"/>
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css'>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
