@@ -82,7 +82,7 @@ echo'<li>';
 echo'</li>';
 
 
-echo"<form action= .$file. method = .$get.>";
+echo"<form action= .$file method = $get >";
 
 echo"<input type = $Hidden name = $locate value = '".$locatedata."'>";//when you go to get on other page have to use string like locationaddress
 

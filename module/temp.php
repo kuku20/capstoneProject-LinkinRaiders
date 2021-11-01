@@ -31,9 +31,8 @@
 let map, infoWindow;
 var curLoc;
 var desLoc;
-var markName = "<?php
-$test = Print($_GET['locationaddress']);
-?>";
+var markName = "<?php echo ($_GET['locationaddress']);?>";
+console.log(markName);
 
 //document.getElementById("name").innerHTML = markName;
 //defines constant variables
