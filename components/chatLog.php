@@ -38,7 +38,7 @@
                 } else {    // displaying others message
                     $output =   '<div class="message-row other-message">
 					                <div class="message-content">
-						                <img src="../assets/profile_img.jpg" alt="user icon" class="userPhoto" />
+						                <?php checkImg(); ?>
 						                <div class="message-text">
 							                ' . $msg['message'] . '
 						                </div>
