@@ -134,6 +134,21 @@
 	</div>
 </div>
 <!-- outside content section -->
+<?php
+    function checkImg() {
+        if ($_SESSION['image']!=null) { 
+            echo '<img class="avatar" src="data:jpeg;base64,';
+            echo base64_encode($_SESSION['image']->cover->getData());
+            echo'" />';}
+            else{
+                echo '<img class="avatar" src="../assets/profile_img.png" />';
+            }
+    }
+?>	
+	
+	
+	
+	
 <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 	if ( window.history.replaceState ) {
