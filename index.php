@@ -5,7 +5,9 @@ require_once ('components/security/signup.php');
  ?>
  <?php
 session_start();
-if($_GET["logout"]== 1 AND $_SESSION['id']) {
+error_reporting(0);
+if($_GET['logout']== 1 AND $_SESSION['id']) {
+    session_unset();
     session_destroy();
     $message = "You have been logged out. Have a nice day!";
     header('location: index.php');

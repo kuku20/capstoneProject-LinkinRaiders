@@ -71,7 +71,7 @@
 			$insertOneResult = $collection->insertOne([
     		'username' => $username,
     		'email' => $email,
-    		'password' => $password_1,
+    		'password' => $pass,
 			]);
  		}else{
  			echo '<script type="text/javascript">';
