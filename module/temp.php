@@ -1,3 +1,11 @@
+<?php 
+  require ('../vendor/autoload.php');
+  require_once ('../config.php');
+  require_once ('../session.php');
+  require('../components/inc/head.php');
+  require('../components/inc/sideBar.php');
+  require('../components/inc/footer.php'); 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,9 +29,12 @@
 	}
 	</style>
 </head>
-
-<div id="map"></div>
-<p class = "distance" id="msg"></p>
+<div class="home_content">
+  <div class="text">
+		<div id="map"></div>
+		<p class = "distance" id="msg"></p>
+</div>
+  </div>
 </html>
 
 <script>

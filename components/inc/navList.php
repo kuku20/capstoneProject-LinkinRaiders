@@ -29,7 +29,7 @@
                 <span class = "tooltip">Student Events</span>
             </li>
             <li>
-                <a href="#">
+                <a href="Translator.php">
                     <i class='bx bx-globe'></i>
                     <span class="links_name">Translator</span>
                 </a>

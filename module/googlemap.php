@@ -2,9 +2,9 @@
   require ('../vendor/autoload.php');
   require_once ('../config.php');
   require_once ('../session.php');
-  // require('../components/inc/head.php');
-  // require('../components/inc/sideBar.php');
-  // require('../components/inc/footer.php'); 
+  require('../components/inc/head.php');
+  require('../components/inc/sideBar.php');
+  require('../components/inc/footer.php'); 
 ?>
 
 

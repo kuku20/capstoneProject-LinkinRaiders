@@ -1,9 +1,16 @@
+<?php 
+  require ('../vendor/autoload.php');
+  require_once ('../config.php');
+  require_once ('../session.php');
+  // require('../components/inc/head.php');
+  // require('../components/inc/sideBar.php');
+  // require('../components/inc/footer.php'); 
+?>
 <!DOCTYPE html>
 <html>
 	<head>
-	
-	<link rel="stylesheet" href = "eventsDecor.css">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/eventsDecor.css">
 	</head>
 <body>
 	<div class="home_content">
@@ -15,12 +22,7 @@
 
 
 <?php 
-	require ('../vendor/autoload.php');
-	require_once ('../config.php');
-	require_once ('../session.php');
-	// require('../components/inc/head.php');
-	// require('../components/inc/sideBar.php');
-	// require('../components/inc/footer.php'); 
+
 
 // try {
 //     $client = new MongoDB\Client("mongodb://localhost:27017");
