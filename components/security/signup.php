@@ -51,7 +51,7 @@
 			// echo  $error;  //not showing an alert box.
 			// echo '</script>';
  			
-			$pass = md5($password_1);
+			$passhash = password_hash($password_1, PASSWORD_DEFAULT);
 			$_SESSION['username'] = $username;
 			$insertOneResult = $collection->insertOne([
     		'username' 	=> $username,
@@ -59,7 +59,7 @@
     		'email' 	=> $email,
     		'gender'	=> 'none',
     		'role'		=> 'none',
-    		'password' => $password_1,
+    		'password' => $passhash,
     		'google_secret'=>' ',
     		// 'image'=>$image_data,
     		'image'=>null,

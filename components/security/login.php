@@ -1,11 +1,11 @@
 <?php 
+require ('google_code_encrypt_decrypt.php');
 	function function_alert($msg) {
     	echo "<script type='text/javascript'>alert('$msg');</script>";
 	}
 // login==========================
 	require ('vendor/autoload.php');
 	require ('config.php');
-	// $client = new MongoDB\Client('mongodb+srv://data2u:i8AohiQaOzxPEpIc@data2u.f9hzo.mongodb.net/datattu');
 	$username = "";
 	$password    = "";
 	if (isset($_POST['user_login'])) {
@@ -13,7 +13,7 @@
 		$password = $_POST['password'];
 		$collection = $client->datattu->ttu;
 		$document = $collection->findOne(['username' => $username]);
-		if($document['password']==$password ){
+		if(password_verify($password, $document['password'])){
 			// get user to mainpage
 			$_SESSION['id']=$document['_id'];
           	$_SESSION['username'] = $username;
@@ -34,7 +34,8 @@
           			header("Location: module/homepage.php");
           		}	
           	}else{
-          		$_SESSION['secret'] = $document['google_secret'];
+          		// decrypt the database to original for gg to read
+          		$_SESSION['secret'] = encrypt_decrypt($document['google_secret'],$_SESSION['id'],'decrypt');
           		header("Location: components/security/validated_google_auth.php");
           	}
           	
