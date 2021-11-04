@@ -23,14 +23,6 @@
 		$email = $_POST['email'];
 		$password_1 = $_POST['password1'];
 		$password_2 = $_POST['password2'];
-
-		// $questionCover = $_FILES["cover"];
-		// $image_data = array( 
-		// "type" => "MCQ",
-  //     	"cover" => new MongoDB\BSON\Binary(file_get_contents($questionCover["tmp_name"]), MongoDB\BSON\Binary::TYPE_GENERIC),
-  // 			); 
-		// by adding (array_push()) corresponding error unto $errors array
-		// by adding (array_push()) corresponding error unto $errors array
 		if (empty($username)) { array_push($errors, "Username is required"); }
 		if (empty($email)) { array_push($errors, "Email is required"); }
 		if (empty($password_1)) { array_push($errors, "Password is required"); }
@@ -47,9 +39,6 @@
 			echo '</script>';
  		}
  		if(count($errors)==0){
- 		// 	echo '<script type="text/javascript">';
-			// echo  $error;  //not showing an alert box.
-			// echo '</script>';
  			
 			$passhash = password_hash($password_1, PASSWORD_DEFAULT);
 			$_SESSION['username'] = $username;
@@ -61,7 +50,6 @@
     		'role'		=> 'none',
     		'password' => $passhash,
     		'google_secret'=>' ',
-    		// 'image'=>$image_data,
     		'image'=>null,
     		'google_require' => false,
 			]);

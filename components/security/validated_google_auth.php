@@ -23,8 +23,10 @@ if (isset($_POST['user_code'])) {
             ['username' => $_SESSION['username']],
             ['$set' => ['google_require' => true]],
         );
+        //to homepage
         $_SESSION['google_require']=true;
         $_SESSION['logined']='accepted';
+        //redirect to homepage
         if($_SESSION['role']=='admin' or $_SESSION['role']=='moderator'){
             header("Location: ../../module/adminhomepage.php");
             }elseif($_SESSION['role']=='moderator'){

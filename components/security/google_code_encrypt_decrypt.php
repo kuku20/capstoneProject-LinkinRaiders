@@ -1,4 +1,5 @@
 <?php 
+//to encrypet and decrypt by user id
 function encrypt_decrypt($gg_secret,$userId, $action = 'encrypt')
 {
     $encrypt_method = "AES-256-CBC";
@@ -14,5 +15,4 @@ function encrypt_decrypt($gg_secret,$userId, $action = 'encrypt')
     }
     return $output;
 }
-
 ?>

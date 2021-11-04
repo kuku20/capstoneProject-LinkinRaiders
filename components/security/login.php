@@ -14,15 +14,14 @@ require ('google_code_encrypt_decrypt.php');
 		$collection = $client->datattu->ttu;
 		$document = $collection->findOne(['username' => $username]);
 		if(password_verify($password, $document['password'])){
-			// get user to mainpage
+               //set some session to use later
 			$_SESSION['id']=$document['_id'];
           	$_SESSION['username'] = $username;
           	$_SESSION['success'] = "You are now logged in";
-
           	$_SESSION['image'] = $document['image'];
-          	// admin page
           	$_SESSION['google_require']=$document['google_require'];
-          	$_SESSION['role']=$document['role'];       	
+          	$_SESSION['role']=$document['role']; 
+               //redirect to different homepage      	
           	if($document['google_require']==false){
           		$_SESSION['logined']='accepted';
           		if($_SESSION['role']=='admin'){
