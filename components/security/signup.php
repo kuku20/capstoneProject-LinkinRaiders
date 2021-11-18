@@ -10,6 +10,7 @@
 </html>
 
 <?php 
+
 	 // require_once ('../../config.php');
 	session_start();
 	$username = "";
@@ -23,22 +24,31 @@
 		$email = $_POST['email'];
 		$password_1 = $_POST['password1'];
 		$password_2 = $_POST['password2'];
-		if (empty($username)) { array_push($errors, "Username is required"); }
-		if (empty($email)) { array_push($errors, "Email is required"); }
-		if (empty($password_1)) { array_push($errors, "Password is required"); }
-		if ($password_1 != $password_2) {
-		array_push($errors, "The two passwords do not match");
-		}
-
  		$collection = $client->datattu->ttu;
  		$checkExistUser = $collection->findOne(['username' => $username]);
  		if($checkExistUser){
- 			array_push($errors, "Username alrady exists, Try Login!");
+ 			// array_push($errors, "Username alrady exists, Try Login!");
  			echo '<script type="text/javascript">';
 			echo ' alert("Username alrady exists, Try Login!")';  //not showing an alert box.
 			echo '</script>';
- 		}
- 		if(count($errors)==0){
+ 		}else {
+ 			if (empty($username)) { array_push($errors, "Username is required."); }
+			if (empty($email)) { array_push($errors, "Email is required."); }
+			if (empty($password_1)) { array_push($errors, "Password is required."); }
+			if ($password_1 != $password_2) {
+			array_push($errors, "The two passwords do not match.");
+				}else{
+					// Validate password strength
+					$uppercase 	  = preg_match('@[A-Z]@', $password_1);
+					$lowercase 	  = preg_match('@[a-z]@', $password_1);
+					$number    	  = preg_match('@[0-9]@', $password_1);
+					$specialChars = preg_match('@[^\w]@', $password_1);
+					if (empty($uppercase)) { array_push($errors, "Password should include at least one upper case letter."); }
+					if (empty($lowercase)) { array_push($errors, "Password should include at least one lower case letter."); }
+					if (empty($number)) { array_push($errors, "Password should include at least one number."); }
+					if (empty($specialChars)) { array_push($errors, "Password should include at least one special letter."); }
+				}
+			if(count($errors)==0){
  			
 			$passhash = password_hash($password_1, PASSWORD_DEFAULT);
 			$_SESSION['username'] = $username;
@@ -47,7 +57,7 @@
     		'name'		=> 'none',
     		'email' 	=> $email,
     		'gender'	=> 'none',
-    		'role'		=> 'none',
+    		'role'		=> 'user',
     		'password' => $passhash,
     		'google_secret'=>' ',
     		'image'=>null,
@@ -74,11 +84,9 @@
 			
 			
 			
- 		}else{
- 			echo '<script type="text/javascript">';
-			echo  $error;  //not showing an alert box.
-			echo '</script>';
  		}
+ 		}
+ 		
 			
 		// <a href="components/security/login.php">
 			// header('location: index.php');
@@ -88,24 +96,18 @@
 
  ?>
 
-<?php if (count($errors) > 0) : ?>
-  <div class="message error validation_errors" >
-  	<?php foreach ($errors as $error) : ?>
-  	  <p><?php echo $error ?></p>
-  	<?php endforeach ?>
-  </div>
-<?php endif ?>
+
 <script>
-$(document).ready(function () {
-    $("#btnPopup").click(function () {
-        $("#signUpPopup").show();
-    });
-    // click to X to close the pop up
-    $("#closeform").click(function(){
-    	$("#signUpPopup").hide();
-    });
-    $('#signmeup').click(function(){
-    	$('#signUpPopup').show();
-    });
-});
+// $(document).ready(function () {
+//     $("#btnPopup").click(function () {
+//         $("#signUpPopup").show();
+//     });
+//     // click to X to close the pop up
+//     $("#closeform").click(function(){
+//     	$("#signUpPopup").hide();
+//     });
+//     $('#signmeup').click(function(){
+//     	$('#signUpPopup').show();
+//     });
+// });
 </script>

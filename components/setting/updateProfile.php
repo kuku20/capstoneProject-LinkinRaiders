@@ -65,7 +65,7 @@
 <script type = "text/javascript">  
 function myfunction() {  
 	if (confirm("DO YOU WANT TO DELETE YOUR ACCOUNT?")) {
-		alert("DELETE, SEE YOUR LATER!!!!");
+		alert("DELETED, SEE YOUR LATER!!!!");
 		let deleteyes = "delete";
 			
 		$(document).ready(function(){

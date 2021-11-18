@@ -7,6 +7,7 @@
 	"ext-mongodb": "~1.10.0",
 	"php": "~7.3.11",
     	"mongodb/mongodb": "^1.9",
-	"sonata-project/google-authenticator": "^2.3"
+	"sonata-project/google-authenticator": "^2.3",
+  "stichoza/google-translate-php": "^4.1"
   }
 }

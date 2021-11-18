@@ -12,7 +12,6 @@ require_once ('../../config.php');
     $_SESSION['secret'] = $secret;
     // test code
     // $secret = 'XVQ2UIGO75XRUKJO';
-    //display the qr secret for scan by user
     $qr_code= \Sonata\GoogleAuthenticator\GoogleQrUrl::generate($_SESSION['username'] , $secret, 'LINKINRAIDERS.COM');
 ?>
 <!doctype html>
