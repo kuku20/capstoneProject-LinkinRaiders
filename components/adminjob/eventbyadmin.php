@@ -14,8 +14,8 @@
 
 		foreach ($event as $document) {
 			if($document->{'_id'} . " " == $_SESSION['idevent']){
-				
 			echo '<div class="text">';
+				echo 
 				var_dump($document);
 				// echo $_SESSION['idevent']=$document['_id'];
 				// echo '<a id= "your_click" value ="';
@@ -26,9 +26,6 @@
 				echo '';
 			echo'  </div>';
 
+			}
 		}
-		}
-
-
-
  ?>

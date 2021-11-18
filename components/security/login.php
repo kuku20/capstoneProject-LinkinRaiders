@@ -24,11 +24,8 @@ require ('google_code_encrypt_decrypt.php');
                //redirect to different homepage      	
           	if($document['google_require']==false){
           		$_SESSION['logined']='accepted';
-          		if($_SESSION['role']=='admin'){
-          			header("Location: module/adminhomepage.php");
-          		}
-          		elseif($_SESSION['role']=='moderator'){
-          			header("Location: module/moderatorhp.php");
+          		if($_SESSION['role']=='admin' or $_SESSION['role']=='moderator'){
+          			header("Location: module/ad_mod_hp.php");
           		}else{
           			header("Location: module/homepage.php");
           		}	
@@ -36,9 +33,7 @@ require ('google_code_encrypt_decrypt.php');
           		// decrypt the database to original for gg to read
           		$_SESSION['secret'] = encrypt_decrypt($document['google_secret'],$_SESSION['id'],'decrypt');
           		header("Location: components/security/validated_google_auth.php");
-          	}
-          	
-			
+          	}	
 		} 
 		else{
 		function_alert("Wrong Password or Username!!!!");

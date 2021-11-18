@@ -44,19 +44,16 @@
             </li>
             <!-- admin option display -->
             <?php 
-                if($_SESSION['role']=='admin'){
                     echo '<li>';
-                    echo '<a href = "adminhomepage.php">';
+                    echo '<a href = "ad_mod_hp.php">';
                     echo    '<i class="bx bx-grid-alt"></i>';
+                if($_SESSION['role']=='admin'){
                     echo    '<span class = "links_name">Admin Dashboard</span>';
                     echo '</a>';
                     echo '<span class = "tooltip">Admin Dashboard</span>';
                     echo '</li>';
                 } 
                 if($_SESSION['role']=='moderator'){
-                    echo '<li>';
-                    echo '<a href = "moderatorhp.php">';
-                    echo    '<i class="bx bx-grid-alt"></i>';
                     echo    '<span class = "links_name">Moderator Dashboard</span>';
                     echo '</a>';
                     echo '<span class = "tooltip">Moderator Dashboard</span>';

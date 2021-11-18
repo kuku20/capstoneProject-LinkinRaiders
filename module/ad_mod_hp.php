@@ -10,9 +10,15 @@
 <link rel="stylesheet" href="../css/adminhomepage.css">
 
  <div class="home_content">
- 	<h1 class="text">HELLO MODERATOR: <?php echo $_SESSION['username']; ?></h1>
- 	<h1 class="text">These events need to comfirm!!</h1>
- 	<?php 
+ 	<?php
+ 		if($_SESSION['role']=='admin'){
+ 			echo '<h1 class="text">HELLO ADMIN:';
+ 		}else{
+ 			echo '<h1 class="text">HELLO MODERATOR:';
+ 		}
+ 		echo $_SESSION['username'];
+ 		echo '</h1>';
+ 		echo '<h1 class="text">These events need to comfirm!!</h1>';
 	 	$eventscollection = $client->datattu->events;
 		$event = $eventscollection->find(['permit' => false]);
 		foreach ($event as $document) {
@@ -25,6 +31,10 @@
 				echo'  need your decide </a>';
 			echo'  </div>';
 
+		}
+		//more job for admin
+		if($_SESSION['role']=='admin'){
+			include 'adminjob.php';
 		}
  	 ?>
  </div>
