@@ -1,0 +1,25 @@
+body{
+
+}
+
+h2{
+color: red;
+margin-left: 20px;
+}
+
+input[type = "Submit"]{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+.box{
+
+  width: 600px;
+  height: auto;
+  background:  #edeae6;
+}

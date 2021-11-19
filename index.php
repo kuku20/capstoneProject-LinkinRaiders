@@ -1,7 +1,8 @@
 <?php 
-
+require ('vendor/autoload.php');
 require_once ('config.php');
 require_once ('components/security/signup.php');
+require_once ('components/security/login.php');
  ?>
  <?php
 session_start();
@@ -16,22 +17,90 @@ if($_GET["logout"]== 1 AND $_SESSION['id']) {
  <head>
     <title>LinkinRaiders</title>
     <!-- Google Fonts  -->
-    <link rel="stylesheet" type="text/css" href="">
+    <!-- <link rel="stylesheet" type="text/css" href=""> -->
+    <link rel="stylesheet" type="text/css" href="css/signup_signin.css">
+    <!-- <link rel="stylesheet" href="../css/homeStyle.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/webPageCss.css"> -->
 
-    <div>
-        <div class="login">
-            <form action="index.php" method="post">
-                <h2>Login</h2>
-                <input type="text" name="username" placeholder="Username" required="">
-                <input type="password" name="password" placeholder="Password" required="">
-                <?php require_once ('components/security/login.php');?>
-                <button class="loginbtn" type="submit" name="user_login">Sign In</button>   
-            </form>
-        </div>
-    </div>
  </head>
  <body>
- 
+
+<div class="hero">
+    <div class="form-box">
+        
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="Register()">Register</button>
+            <button type="button" class="toggle-btn" onclick="LogIn()">LogIn</button>
+        </div>
+
+        <div class="social-icons">
+            <img src="assets/raiderlink.png">
+            <img src="assets/blackboard.jpg">
+            <img src="assets/linkin.jpg">
+        </div>
+        <form id="register" action="index.php" class="input-group" method="post">
+             
+            <h2>Login</h2>
+            <input type="text" class="input-field" name="username" placeholder="Username" required="">
+
+            <input type="password" class="input-field" name="password" placeholder="Password" required="">
+
+            <button class="submit-btn" type="submit" name="user_login">Sign In</button>   
+
+        </form>
+<!-- create account -->
+<!-- <button id="btnPopup">CREATE ACCOUNT</button> -->
+<!-- <div id="signUpPopup"> -->
+        <form id="login" class="input-group" action="index.php" method="post" enctype="multipart/form-data">
+
+
+        <!-- <h1 id="closeform">X</h1> -->
+        <!-- <h2>Sign Up </h2>
+        <p>It's quick and easy.</p> -->
+            <input type="text" class="input-field" name="username" placeholder="Username" required="true">
+
+            <input type="email" class="input-field" name="email" placeholder="Email">
+
+            <input type="password" name="password1" class="input-field" placeholder="Password" required="true">
+
+            <input type="password" name="password2" class="input-field" placeholder="Repeat-Password" required="true">
+            <!-- <input type="file" name="cover" > -->
+            <br>
+            <input type="checkbox" class="check-box" required="true"><span>I agree to the terms and conditions</span>
+
+            <button id="signmeup" class="submit-btn" type="submit" name="user_signup" >Sign Up</button>
+        </form>
+<!-- </div> -->
+<!-- log in -->
+
+<!-- <div class="login"> -->
+        
+    </div>
+</div>
+<?php include('components/security/error.php'); ?> 
  </body>
  </html>
+ <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+
+        function LogIn(){
+            x.style.left = "-400px";
+            y.style.left= "50px";
+            z.style.left = "110px";
+        }
+        function Register(){
+            x.style.left = "50px";
+            y.style.left= "450px";
+            z.style.left = "0";
+        }
+    </script>
 <!--  //login user -->
+
+<script>
+// if ( window.history.replaceState ) {
+//   window.history.replaceState( null, null, window.location.href );
+// }
+</script>
