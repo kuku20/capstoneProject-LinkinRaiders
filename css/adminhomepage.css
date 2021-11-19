@@ -1,0 +1,52 @@
+  
+#confirm {
+   display: none;
+   background-color: #91FF00;
+   border: 1px solid #aaa;
+   position: fixed;
+   width: 250px;
+   left: 15%;
+   /*margin-left: -100px;*/
+   padding: 6px 8px 8px;
+   box-sizing: border-box;
+   text-align: center;
+}
+#confirm button {
+   background-color: #48E5DA;
+   display: inline-block;
+   border-radius: 5px;
+   border: 1px solid #aaa;
+   padding: 5px;
+   text-align: center;
+   width: 80px;
+   cursor: pointer;
+}
+#confirm .message {
+   text-align: left;
+}
+.accept {
+  color: #FFF;
+  background: #44CC44;
+  padding: 15px 20px;
+  box-shadow: 0 4px 0 0 #2EA62E;
+}
+.accept:hover {
+  background: #6FE76F;
+  box-shadow: 0 4px 0 0 #7ED37E;
+}
+.deny {
+  color: #FFF;
+  background: tomato;
+  padding: 15px 20px;
+  box-shadow: 0 4px 0 0 #CB4949;
+}
+.deny:hover {
+  background: rgb(255, 147, 128);
+  box-shadow: 0 4px 0 0 #EF8282;
+}
+.box{
+
+  width: 500px;
+  height: auto;
+  background:  #edeae6;
+}

@@ -1,0 +1,87 @@
+*{ 
+    margin: 0;
+    padding: 0;
+}
+/*cover page*/
+.hero{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("../assets/backgroundforcp.jpg");
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+/*midle box*/
+.form-box{
+    width: 370px;
+    height: 520px;
+    position:relative;
+    margin: 2% auto;
+    background: #fff;
+    padding: 5px;
+    overflow:hidden;
+}
+
+.form-validated{
+    width: 370px;
+    height: 170px;
+    position:relative;
+    border-radius: 5%;
+    margin: 10% auto;
+    background: #fff;
+    padding: 5px;
+    overflow:hidden;
+}
+
+
+/*the input to the top*/
+.input-group{
+    top: 5px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+/*design insign input*/
+.input-field{
+    width:100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left:0;
+    border-top:0;
+    border-right:0;
+    border-bottom: 0;
+    background: #1111;
+}
+.input-file{
+    width:100%;
+    padding: 5px 0;
+    margin: 5px 0;
+    border-left:0;
+    border-top:0;
+    border-right:0;
+    outline:none;
+}
+.skip{
+    margin-top: 10px;
+    margin-left: 45%;
+}
+.qrdisplay{
+    margin-left: 30px;
+}
+.validate-btn{
+    width: 85%;
+    padding:10px 30px;
+    cursor:pointer;
+    display:block;
+    margin:auto;
+    background: linear-gradient(to right, #338b76, #558549);
+    border: 0;
+    outline:none;
+    border-radius:30px;
+}
+
+
+#qrcode{
+    left: 50px;
+    margin-top: 10px;
+}
