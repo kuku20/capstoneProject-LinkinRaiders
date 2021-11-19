@@ -15,6 +15,7 @@
 			// // $collection->deleteMany(['password' => null]);
 			session_destroy();
 			session_unset();
+			location.replace("../../index.php");
 	    }else{
 	    	// echo "string";
 	    	// echo "me";
