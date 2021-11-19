@@ -68,6 +68,9 @@
   </style>
 </head>
 <body>
+  <div class="home_content">
+  <div class="text">
+    
 <form onsubmit="return search()"; class="a" id = "userInp">
   
   <label for "location">Location:</label><br>
@@ -104,7 +107,8 @@
     </tr>
     
 
-  
+  </div>
+  </div>
   
   </tbody>
 </table>

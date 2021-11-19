@@ -30,9 +30,12 @@
   }
   </style>
 </head>
-
+<div class="home_content">
+  <div class="text">
 <div id="map"></div>
 <p class = "distance" id="msg"></p>
+</div>
+  </div>
 </html>
 
 <script>
