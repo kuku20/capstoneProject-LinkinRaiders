@@ -23,7 +23,7 @@
 
   #map{
     height: 500px;
-    width: 100%;
+    width: 90%;
   }
 
   body {
@@ -48,7 +48,7 @@
     border-collapse: collapse;
     font-size: .9em;
     font-family: sans-serif;
-    width: 100%;
+    width: 90%;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
   }
   .styled-table thead tr{
