@@ -61,7 +61,23 @@
 							echo 'Location :';	
 						echo'</td>';
 						echo'<td>';
-						echo"<input type = 'text' placeholder = 'ex. Student Union Building' name = 'location'>";
+						// echo"<input type = 'text' placeholder = 'ex. Student Union Building' name = 'location'>";
+
+						echo '<input list = "locations" type="text" id="location" name="location" placeholder = "ex. Student Union Building" ><br>
+						  <datalist id = "locations">
+						    <option value = "Murdough Hall">
+						    <option value ="Experemental Sciences">
+						    <option value ="Student Union Building">
+						    <option value ="Allen Theatre">
+						    <option value ="Fraizer Pavillion">
+						    <option value ="The Commons by United Supermarkets">
+						    <option value ="The Market at Stangel/Murdough">
+						    <option value ="Wiggins Complex">
+						    
+						  </datalist>';
+
+
+
 						echo'</td>';
 					echo'</tr>';
 
@@ -157,7 +173,7 @@
 	echo'</li>';
 
 	//----------------------------------------------------------------------------------------
-	echo"<form action= .$file. method = .$get.>";
+	echo"<form action= .$file method = .$get.>";
 
 	echo"<input type = $Hidden name = $locate value = '".$locatedata."'>";//when you go to get on other page have to use string like locationaddress
 
