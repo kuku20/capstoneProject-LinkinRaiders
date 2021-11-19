@@ -8,7 +8,11 @@
 
  ?>
 <link rel="stylesheet" href="../css/adminhomepage.css">
-
+<style type="text/css">
+		.home_content{
+			overflow: scroll;
+		}
+	</style>
  <div class="home_content">
  	<?php
  		if($_SESSION['role']=='admin'){
@@ -21,7 +25,7 @@
  		echo '<h1 class="text">These events need to comfirm!!</h1>';
  		// display pending event 
 	 	$eventscollection = $client->datattu->events;
-		$event = $eventscollection->find(['permit' => false]);
+		$event = $eventscollection->find(['permission' => false]);
 		foreach ($event as $document) {
 			echo '<div class="text">';
 				// $_SESSION['ids'] = ;
@@ -29,12 +33,24 @@
 					    <summary>
 					        The new event needs your decide...
 					    </summary>';
-    					echo $document['_id'];
+					    echo "Event:  ";
+    					echo $document['summary'];
+    					echo '<br>';
+    					// echo '<br>';
+    					echo "Date:  ";
+    					echo $document['startlongdate'];
+    					echo '<br>';
+    					echo "Start:  ";
+    					echo $document['starttime'];
+    					echo '<br>';
+    					echo "End:  ";
+    					echo $document['endtime'];
+    					echo '<br>';
+    					echo "Location:  ";
+    					echo $document['locationaddress'];
     					echo '<br>';
     					echo '<br>';
-    					echo $document['topic'];
-    					echo '<br>';
-    					echo '<br>';
+
     					//accept or deny button
     					// echo '<a class="accept" value ="accepted" href="../components/adminjob/eventbyadmin.php" onclick="getIdEvent(this)"
     					// 	>ACCEPT <span class="fa fa-check"></span></a>';

@@ -2,9 +2,9 @@
   require ('../vendor/autoload.php');
   require_once ('../config.php');
   require_once ('../session.php');
-  // require('../components/inc/head.php');
-  // require('../components/inc/sideBar.php');
-  // require('../components/inc/footer.php'); 
+  require('../components/inc/head.php');
+  require('../components/inc/sideBar.php');
+  require('../components/inc/footer.php'); 
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,6 +12,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../css/eventsDecor.css">
 	</head>
+	<style type="text/css">
+		.home_content{
+			overflow: scroll;
+		}
+	</style>
 <body>
 	<div class="home_content">
 	<div class="text">
@@ -22,7 +27,7 @@
 
 
 <?php 
-
+include 'addnewevent.php';
 
 // try {
 //     $client = new MongoDB\Client("mongodb://localhost:27017");
@@ -96,18 +101,17 @@ echo "\n";
 echo'</ul>';
 
 }
-
-// } catch (Exception $e) {
-//     echo "<p>Check you connection</p>";
-//     echo $e->getMessage();
-// }
 ?>
 
 		</div>
 	</div>
 </body>
 </html>
-
+ <script>
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>
 
 
 

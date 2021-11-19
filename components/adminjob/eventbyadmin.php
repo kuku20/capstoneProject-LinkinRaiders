@@ -16,7 +16,7 @@
 	}else{
 		$eventscollection->updateOne(  
 			['_id' => $eventid],
-			['$set' => ['permit' => true]],
+			['$set' => ['permission' => true]],
 		);
 	}
 
