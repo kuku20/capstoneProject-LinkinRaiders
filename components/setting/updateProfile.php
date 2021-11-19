@@ -83,7 +83,7 @@ function myfunction() {
         		}
 			});
 		});
-		parent.location="../../index.php";
+		parent.location="../../module/homepage.php";
 		//location.reload();
 		//location.replace("../../index.php");
 	}else{
