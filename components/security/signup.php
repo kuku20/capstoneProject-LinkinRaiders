@@ -66,6 +66,7 @@
 			// logined
 			$getnewuser = $collection->findOne(['username' => $username]);
 			$_SESSION['id']=$getnewuser['_id'];
+			$_SESSION['role']=$getnewuser['role'];
 			echo '<script type="text/javascript">';
 			echo ' alert("Create success!!")'; 
 			echo '</script>';
