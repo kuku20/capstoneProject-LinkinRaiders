@@ -84,7 +84,8 @@ function myfunction() {
 			});
 		});
 		// parent.location="../components/setting/updateQR.php";
-		//location.reload();
+		location.reload();
+		location.reload();
 		location.replace("../../index.php");
 	}else{
 		location.reload();
