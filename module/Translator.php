@@ -47,7 +47,7 @@
   </style>
   </head>
   <!-- This is code from Tailblocks known as Contact us that we will change to make our format-->
-  <body class="bg-gray-900">
+  <body value="Get Selection" onmouseup="getSelectedText()">
     <!-- bg is background-color-shading-->
     <div class="home_content">
   <div class = "box">
@@ -62,6 +62,7 @@
           <p >This is our Senior Capstone Language Translator</p>
           <p >Instructions: Type in the message box to have it translated. And choose between your two languages. Use the left to have clarify your initial language and sse the right for your desired language.</p>
           <p >Note: It will automatically detect the language even if you chose the wrong initial language.</p>
+          <br>
         </div>
         <div >
           <div >
@@ -228,7 +229,10 @@
               <div  >
                 <!--This will be the message that we will translate based on what the user will type-->
                 
-                <textarea id="message" name="message"class="inputbox" ></textarea>
+                
+                <form name="testform">
+                  <textarea id="message" name="message"class="inputbox" ></textarea>
+              </form>
               </div>
             </div>
             <div >
@@ -244,5 +248,26 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
   <script src="../assets/js/app.js"></script>
 
-
+<script>
+            // Function to get the Selected Text 
+            function getSelectedText() {
+                var selectedText = '';
+  
+                // window.getSelection
+                if (window.getSelection) {
+                    selectedText = window.getSelection();
+                }
+                // document.getSelection
+                else if (document.getSelection) {
+                    selectedText = document.getSelection();
+                }
+                // document.selection
+                else if (document.selection) {
+                    selectedText = 
+                    document.selection.createRange().text;
+                } else return;
+                // To write the selected text into the textarea
+                document.testform.message.value = selectedText;
+            }
+        </script>
 <?php require('../components/inc/footer.php'); ?>
