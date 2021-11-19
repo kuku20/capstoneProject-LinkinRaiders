@@ -17,3 +17,9 @@ input[type = "Submit"]{
   display: inline-block;
   font-size: 12px;
 }
+.box{
+
+  width: 500px;
+  height: auto;
+  background:  #edeae6;
+}

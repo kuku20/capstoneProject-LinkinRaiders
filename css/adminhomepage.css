@@ -44,3 +44,9 @@
   background: rgb(255, 147, 128);
   box-shadow: 0 4px 0 0 #EF8282;
 }
+.box{
+
+  width: 500px;
+  height: auto;
+  background:  #edeae6;
+}

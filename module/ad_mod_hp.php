@@ -15,6 +15,7 @@
     }
 	</style>
  <div class="home_content">
+ 	<div class = "box">
  	<div class="text">
  	<?php
 
@@ -88,7 +89,7 @@
 			include 'adminjob.php';
 		}
  	 ?>
- </div>
+ </div></div>
 </div>
  <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
