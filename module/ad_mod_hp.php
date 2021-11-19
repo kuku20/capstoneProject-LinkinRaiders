@@ -10,24 +10,28 @@
 <link rel="stylesheet" href="../css/adminhomepage.css">
 <style type="text/css">
 		.home_content{
-			overflow: scroll;
-		}
+      overflow: scroll;
+        margin-left: 100px;
+    }
 	</style>
  <div class="home_content">
+ 	<div class="text">
  	<?php
+
  		if($_SESSION['role']=='admin'){
- 			echo '<h1 class="text">HELLO ADMIN:';
+ 			echo '<h2 >HELLO ADMIN:';
  		}else{
- 			echo '<h1 class="text">HELLO MODERATOR:';
+ 			echo '<h2 >HELLO MODERATOR:';
  		}
  		echo $_SESSION['username'];
- 		echo '</h1>';
- 		echo '<h1 class="text">These events need to comfirm!!</h1>';
+ 		echo '</h4>';
+ 		echo '<br>';
+ 		echo '<h4 >These events need to comfirm!!</h1>';
  		// display pending event 
 	 	$eventscollection = $client->datattu->events;
 		$event = $eventscollection->find(['permission' => false]);
 		foreach ($event as $document) {
-			echo '<div class="text">';
+			// echo '<div class="text">';
 				// $_SESSION['ids'] = ;
 				echo '<details style="cursor: pointer;">
 					    <summary>
@@ -65,7 +69,7 @@
 						echo ' onclick="getIdEvent(this)">DENY <span class="fa fa-close"></span></a>';
 						
 				echo '</details>';
-
+				echo '<br>';
 				// echo '<a class="accept" value ="';
 				// echo $document['_id'];
 				// echo ' "onclick="getIdEvent(this)"  >ACCEPT <span class="fa fa-check"></span></a>';
@@ -76,7 +80,7 @@
 				// echo ' "  href="../components/adminjob/eventbyadmin.php" onclick="getIdEvent(this)"  >topic: ';
 				// echo $document['topic'];
 
-			echo'  </div>';
+			// echo'  </div>';
 
 		}
 		//more job for admin
@@ -85,7 +89,7 @@
 		}
  	 ?>
  </div>
-
+</div>
  <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 

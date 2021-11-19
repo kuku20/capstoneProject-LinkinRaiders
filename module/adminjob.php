@@ -1,5 +1,5 @@
-
- 	<h1 class="text">Report account id= can delete it</h1>
+<br>
+ 	<h4 >Report account id= can delete it</h4>
 
 <!--  	<form  method="" enctype="multipart/form-data">
 	 	
@@ -7,7 +7,8 @@
 	 	<button  type="submit" onclick="updaterole()">APPLY</button>
 	</form>
 <a class="text" href="../components/adminjob/assignrole.php">cl</a> -->
-<h1 class="text">Assign role to user: </h1>
+<br>
+<h4 >Assign role to user: </h4>
 
 	<input class="text" type="type" id="userrole" name="usernamerole" placeholder="Username" >
       <button onclick='functionConfirm("Which role would you assign?", function moderator() {

@@ -151,9 +151,9 @@
 	echo'<ul>';
 	echo'<li>';  
 
-		echo '<h1>';
+		echo '<h4>';
 	        echo $suminfo[$j];
-		echo '</h1>';
+		echo '</h4>';
 		echo "\n";
 	        echo "Date",": ", $dateinfo[$j], "\n";
 		

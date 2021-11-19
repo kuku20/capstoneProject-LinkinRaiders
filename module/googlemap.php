@@ -16,6 +16,11 @@
     margin: 0;
     padding: 0;
   }
+  .home_content{
+      overflow: scroll;
+        margin-left: 100px;
+    }
+
   #map{
     height: 500px;
     width: 100%;
