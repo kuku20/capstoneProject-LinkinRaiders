@@ -8,7 +8,6 @@
 
   <!--Call the CSS files to make it like the template on Tailbocks-->
   <!-- Link to the Tailblocks site to help create my translator https://tailblocks.cc/ -->
-  <link rel="stylesheet" href="../assets/tailwind.min.css"/>
   <title>LinkinRaider</title>
   </head>
   <!-- This is code from Tailblocks known as Contact us that we will change to make our format-->
