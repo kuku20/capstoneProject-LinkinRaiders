@@ -2,7 +2,8 @@
 	require ('../vendor/autoload.php');
 	require_once ('../config.php');
 	require_once ('../session.php');
-  // <?php require('../components/inc/footer.php'); ?>
+  require('../components/inc/footer.php');
+  require('../components/inc/sideBar.php');
  ?>
 
 <!DOCTYPE html>
@@ -18,6 +19,11 @@
   <!-- This is code from Tailblocks known as Contact us that we will change to make our format-->
   <body class="bg-gray-900">
     <!-- bg is background-color-shading-->
+    <div class="home_content">
+  <div class = "box">
+  <div class="text">
+        
+      
     <section class="text-gray-100 bg-gray-900 body-font relative">
       <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-col text-center w-full mb-12">
@@ -204,7 +210,10 @@
         </div>
       </div>
     </section>
+    </div>
+    </div>
+    </div>
   <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
   <script src="../assets/js/app.js"></script>
-?>
+
 
