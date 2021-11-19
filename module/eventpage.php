@@ -21,9 +21,8 @@
 <body>
 	<div class="home_content">
 	<div class = "box">
-	<div class="text">
-	<h2>Texas Tech Events</h2>
-	
+		<div class="text">
+		<h2>Texas Tech Events</h2>
 		<?php 
 		include 'addnewevent.php';
 
