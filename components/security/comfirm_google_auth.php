@@ -1,6 +1,7 @@
 <?php 
 require ('../../vendor/autoload.php');
 require_once ('../../config.php'); 
+// require_once ('../sessionc.php');
 
 ?>
 <?php 
@@ -12,6 +13,11 @@ require_once ('../../config.php');
     $_SESSION['secret'] = $secret;
     // test code
     // $secret = 'XVQ2UIGO75XRUKJO';
+    // echo "Get a new Secret: $secret \n";
+    // echo $_SESSION['username'] ;
+
+    // echo '<img src=" '.\Sonata\GoogleAuthenticator\GoogleQrUrl::generate($_SESSION['username'] , $secret, 'LINKINRAIDERS.COM').'" />';
+
     $qr_code= \Sonata\GoogleAuthenticator\GoogleQrUrl::generate($_SESSION['username'] , $secret, 'LINKINRAIDERS.COM');
 ?>
 <!doctype html>

@@ -15,11 +15,5 @@ input[type = "Submit"]{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 12px;
-}
-.box{
-
-  width: 600px;
-  height: auto;
-  background:  #edeae6;
+  font-size: 16px;
 }

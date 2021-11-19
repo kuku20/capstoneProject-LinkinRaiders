@@ -1,7 +1,6 @@
 <?php
 require ('../../vendor/autoload.php'); 
 require_once ('../../config.php');
-require ('google_code_encrypt_decrypt.php');
 // require_once ('../sessionc.php');
 
 session_start();
@@ -12,21 +11,16 @@ if (isset($_POST['user_code'])) {
 	$check_this_code = $_POST['code'];
 	if ($g->checkCode($_SESSION['secret'], $check_this_code)) {
 		$collection = $client->datattu->ttu;
-        //encrypt the qr then push to database
-        $ggqr = encrypt_decrypt($_SESSION['secret'],$_SESSION['id'], 'encrypt');
-        unset($_SESSION['secret']);
         $collection->updateOne(
             ['username' => $_SESSION['username']],
-            ['$set' => ['google_secret' => $ggqr]],
+            ['$set' => ['google_secret' => $_SESSION['secret']]],
         );
         $collection->updateOne(
             ['username' => $_SESSION['username']],
             ['$set' => ['google_require' => true]],
         );
-        //to homepage
         $_SESSION['google_require']=true;
         $_SESSION['logined']='accepted';
-        //redirect to homepage
         if($_SESSION['role']=='admin' or $_SESSION['role']=='moderator'){
             header("Location: ../../module/adminhomepage.php");
             }elseif($_SESSION['role']=='moderator'){

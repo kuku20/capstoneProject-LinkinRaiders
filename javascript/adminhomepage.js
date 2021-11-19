@@ -27,22 +27,17 @@ function updaterole() {
 }
 function getIdEvent(a) {
   var idevent = "";
-  var decision = "";
 	idevent = a.getAttribute("value");
-  decision = a.getAttribute("class");
 	// location.replace("../components/adminjob/eventsbyadmin.php");
 	// alert(idevent)
-	console.log(idevent)
-  console.log(decision)
+	// console.log(idevent)
 	$.ajax({
             type: "POST",
-            url: "../components/adminjob/eventbyadmin.php",
+            url: "../components/adminjob/eventholder.php",
             data: {
                 idevent: idevent,
-                decision: decision,
             }
         });
-    location.reload();
 }
 
 if ( window.history.replaceState ) {

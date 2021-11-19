@@ -2,8 +2,6 @@
 	require ('../../vendor/autoload.php'); 
 	require_once ('../../config.php');
 	require_once ('../sessionc.php');
-  	require('sidebar.php');
-
 
 	$collection = $client->datattu->ttu;
 	$document = $collection->findOne(['username' => $_SESSION['username']]);
@@ -20,7 +18,7 @@
  	<link rel="stylesheet" href="../../css/updateProfile.css">
  </head>
  <body>
-<div class="home_content">
+<div class="hero">
 	<div class="form-box">
 		<form id="updatesetting" class="input-group" action="updateProfile.php" method="post" enctype="multipart/form-data">
 			<label for= "name"> Name:</label>
@@ -67,7 +65,7 @@
 <script type = "text/javascript">  
 function myfunction() {  
 	if (confirm("DO YOU WANT TO DELETE YOUR ACCOUNT?")) {
-		alert("DELETED, SEE YOUR LATER!!!!");
+		alert("DELETE, SEE YOUR LATER!!!!");
 		let deleteyes = "delete";
 			
 		$(document).ready(function(){

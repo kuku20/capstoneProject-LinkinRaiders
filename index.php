@@ -24,14 +24,12 @@ if($_GET["logout"]== 1 AND $_SESSION['id']) {
 
  </head>
  <body>
-
 <div class="hero">
     <div class="form-box">
-        
         <div class="button-box">
             <div id="btn"></div>
-            <button type="button" class="toggle-btn" onclick="Register()">Register</button>
-            <button type="button" class="toggle-btn" onclick="LogIn()">LogIn</button>
+            <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+            <button type="button" class="toggle-btn" onclick="register()">Register</button>
         </div>
 
         <div class="social-icons">
@@ -39,8 +37,7 @@ if($_GET["logout"]== 1 AND $_SESSION['id']) {
             <img src="assets/blackboard.jpg">
             <img src="assets/linkin.jpg">
         </div>
-        <form id="register" action="index.php" class="input-group" method="post">
-             
+        <form id="login" action="index.php" class="input-group" method="post">
             <h2>Login</h2>
             <input type="text" class="input-field" name="username" placeholder="Username" required="">
 
@@ -52,9 +49,7 @@ if($_GET["logout"]== 1 AND $_SESSION['id']) {
 <!-- create account -->
 <!-- <button id="btnPopup">CREATE ACCOUNT</button> -->
 <!-- <div id="signUpPopup"> -->
-        <form id="login" class="input-group" action="index.php" method="post" enctype="multipart/form-data">
-
-
+        <form id="register" class="input-group" action="index.php" method="post" enctype="multipart/form-data">
         <!-- <h1 id="closeform">X</h1> -->
         <!-- <h2>Sign Up </h2>
         <p>It's quick and easy.</p> -->
@@ -67,7 +62,7 @@ if($_GET["logout"]== 1 AND $_SESSION['id']) {
             <input type="password" name="password2" class="input-field" placeholder="Repeat-Password" required="true">
             <!-- <input type="file" name="cover" > -->
             <br>
-            <input type="checkbox" class="check-box" required="true"><span>I agree to the terms and conditions</span>
+            <input type="checkbox" class="check-box"><span>I agree to the terms and conditions</span>
 
             <button id="signmeup" class="submit-btn" type="submit" name="user_signup" >Sign Up</button>
         </form>
@@ -78,7 +73,7 @@ if($_GET["logout"]== 1 AND $_SESSION['id']) {
         
     </div>
 </div>
-<?php include('components/security/error.php'); ?> 
+
  </body>
  </html>
  <script>
@@ -86,21 +81,15 @@ if($_GET["logout"]== 1 AND $_SESSION['id']) {
         var y = document.getElementById("register");
         var z = document.getElementById("btn");
 
-        function LogIn(){
+        function register(){
             x.style.left = "-400px";
             y.style.left= "50px";
             z.style.left = "110px";
         }
-        function Register(){
+        function login(){
             x.style.left = "50px";
             y.style.left= "450px";
             z.style.left = "0";
         }
     </script>
 <!--  //login user -->
-
-<script>
-// if ( window.history.replaceState ) {
-//   window.history.replaceState( null, null, window.location.href );
-// }
-</script>

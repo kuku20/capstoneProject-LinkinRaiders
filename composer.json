@@ -1,13 +1,8 @@
 {
-  "require" : {
-    "silex/silex": "^2.0.4",
-    "monolog/monolog": "^1.22",
-    "twig/twig": "^2.0",
-    "symfony/twig-bridge": "^3",
-	"ext-mongodb": "~1.10.0",
-	"php": "~7.3.11",
-    	"mongodb/mongodb": "^1.9",
-	"sonata-project/google-authenticator": "^2.3",
-  "stichoza/google-translate-php": "^4.1"
-  }
+    "require": {
+        "mongodb/mongodb": "^1.9",
+        "twbs/bootstrap": "5.1.1",
+        "sonata-project/google-authenticator": "^2.3",
+        "stichoza/google-translate-php": "^4.1"
+    }
 }

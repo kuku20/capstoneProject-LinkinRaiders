@@ -10,7 +10,7 @@ $(document).ready(function() {
 });
 
 sendBtn.onclick = function() {
-    $(document).ready(function() {
+    $(form).ready(function() {
         var visitortime = new Date();
         $.ajax({
             type: "POST",
@@ -71,3 +71,5 @@ setInterval(()=>{
 function scrollToBottom() {
     chatBox.scrollTop = chatBox.scrollHeight;
 }
+
+//Emoji picker

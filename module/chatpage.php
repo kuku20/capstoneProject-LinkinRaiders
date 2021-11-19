@@ -31,6 +31,10 @@
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+	<!-- <link rel="stylesheet" href="../css/emojionearea.min.css" type="text/css">
+	<script type="text/javascript" src="../javascript/emojionearea.min.js"></script> -->
+	<script src="http://cdn.jsdelivr.net/npm/emoji-button@latest/dist/index.min.js"></script>
 </head>
 <body>
 <?php require('../components/inc/sideBar.php'); ?>
@@ -118,7 +122,7 @@
 		</div>
 		<!-- Typing Area -->
 		<div id="chat-form"> 
-			<button class="bottom-icons">
+			<button id="emojiBtn" class="bottom-icons">
 				<i class="fa fa-smile-o fa-3x"></i>
 			</button>
 			<form action="#" method="post" class="typing_area" autocomplete="off">

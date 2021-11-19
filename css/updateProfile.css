@@ -3,34 +3,25 @@
     padding: 0;
 }
 /*cover page*/
-/*.hero{
+.hero{
     height: 100%;
-    width: 100%;*/
-    /*background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(backsground.jpg);*/
-    /*background-position: center;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(backsground.jpg);
+    background-position: center;
     background-size: cover;
-    position: absolute;*/
-/*}*/
+    position: absolute;
+}
 /*midle box*/
 .form-box{
     width: 370px;
     height: 570px;
     position:relative;
-
+    margin: 2% auto;
     background: #fff;
     padding: 5px;
     overflow:hidden;
 }
-.home_content{
-    /*position: absolute;
-    height: 100%;
-    width: calc(100% - 62px);
-    left: 62px;
-    transition: all 0.5s ease;*/
 
-    margin-top: 5%;
-    margin-left: 120px;
-}
 
 
 /*the input to the top*/

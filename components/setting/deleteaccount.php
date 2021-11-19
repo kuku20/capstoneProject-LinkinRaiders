@@ -15,6 +15,8 @@
 			// // $collection->deleteMany(['password' => null]);
 			session_destroy();
 			session_unset();
+
+
 	    }else{
 	    	// echo "string";
 	    	// echo "me";

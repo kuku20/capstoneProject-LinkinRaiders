@@ -19,7 +19,6 @@ require('../components/inc/footer.php');
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/usersetting.css">
 <div class="home_content">
-	<div class = "box">
 	<h1 class="text">Profile <a href="../components/setting/updateProfile.php">Edit</a></h1> 
 	<div id = "imageprofile">
 		<?php
@@ -60,7 +59,7 @@ require('../components/inc/footer.php');
 	</div>
     <!-- <h1 class="text"><a href="">DELETE ACCOUNT</a></h1> -->
 	
-    </div>
+    
      
 
 <!-- when click to the button change
