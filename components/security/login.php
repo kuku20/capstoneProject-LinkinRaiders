@@ -24,10 +24,11 @@ require ('google_code_encrypt_decrypt.php');
                //redirect to different homepage      	
           	if($document['google_require']==false){
           		$_SESSION['logined']='accepted';
-          		if($_SESSION['role']=='admin' or $_SESSION['role']=='moderator'){
-          			header("Location: module/ad_mod_hp.php");
+          		if($_SESSION['role']=='user'){
+                         header("Location: module/homepage.php");
+          			
           		}else{
-          			header("Location: module/homepage.php");
+          			header("Location: module/ad_mod_hp.php");
           		}	
           	}else{
           		// decrypt the database to original for gg to read

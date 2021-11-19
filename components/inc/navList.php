@@ -44,6 +44,7 @@
             </li>
             <!-- admin option display -->
             <?php 
+            if($_SESSION['role']!='user'){
                     echo '<li>';
                     echo '<a href = "ad_mod_hp.php">';
                     echo    '<i class="bx bx-grid-alt"></i>';
@@ -59,5 +60,6 @@
                     echo '<span class = "tooltip">Moderator Dashboard</span>';
                     echo '</li>';
                 } 
+            }
             ?>
         </ul>
