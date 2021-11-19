@@ -2,8 +2,11 @@
 	require ('../vendor/autoload.php');
 	require_once ('../config.php');
 	require_once ('../session.php');
-  require('../components/inc/footer.php');
+  
   require('../components/inc/sideBar.php');
+  require('../components/inc/head.php');
+
+   
  ?>
 
 <!DOCTYPE html>
@@ -15,6 +18,33 @@
   <!--Call the CSS files to make it like the template on Tailbocks-->
   <!-- Link to the Tailblocks site to help create my translator https://tailblocks.cc/ -->
   <title>LinkinRaider</title>
+  <style type="text/css">
+    .box{
+
+  width: 800px;
+  height: auto;
+  background:  #edeae6;
+}
+.home_content{
+    /*position: absolute;
+    height: 100%;
+    width: calc(100% - 62px);
+    left: 62px;
+    transition: all 0.5s ease;*/
+
+    margin-top: 5%;
+    margin-left: 100px;
+}
+.inputbox{
+  height:120px;
+   width:650px
+}
+
+.trans{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+  </style>
   </head>
   <!-- This is code from Tailblocks known as Contact us that we will change to make our format-->
   <body class="bg-gray-900">
@@ -24,22 +54,22 @@
   <div class="text">
         
       
-    <section class="text-gray-100 bg-gray-900 body-font relative">
-      <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-col text-center w-full mb-12">
+    <section >
+      <div >
+        <div >
           <!-- This is the text to establish to the user on how to use the translator-->
-          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Language Translator</h1>
-          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">This is our Senior Capstone Language Translator</p>
-          <p class="lg:w-2/3 mx-auto leading-relaxed text base">Instructions: Type in the message box to have it translated. And choose between your two languages. Use the left to have clarify your initial language and sse the right for your desired language.</p>
-          <p class="lg:w-2/3 mx-auto leading-relaxed text base">Note: It will automatically detect the language even if you chose the wrong initial language.</p>
+          <h1 >Language Translator</h1>
+          <p >This is our Senior Capstone Language Translator</p>
+          <p >Instructions: Type in the message box to have it translated. And choose between your two languages. Use the left to have clarify your initial language and sse the right for your desired language.</p>
+          <p >Note: It will automatically detect the language even if you chose the wrong initial language.</p>
         </div>
-        <div class="lg:w-1/2 md:w-2/3 mx-auto">
-          <div class="flex flex-wrap -m-2">
-            <div class="p-2 w-1/2">
-              <div class="relative">
-                <p class="lg:w-2/3 mx-auto leading-relaxed text base">Initial Language</p>
+        <div >
+          <div >
+            <div >
+              <div >
+                <p >Initial Language
                 <!--This will be our first language that will detect the users defualt language and will give an option -->
-                <select type="text" id="lang_one" name="lang_one" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <select type="text" id="lang_one" name="lang_one">
                   <option value="Auto_Detect">Auto Detect</option>
                   <option value="AF">Afrikaans</option>
                   <option value="SQ">Albanian</option>
@@ -114,13 +144,9 @@
                   <option value="CY">Welsh</option>
                   <option value="XH">Xhosa</option>
                 </select>
-              </div>
-            </div>
-            <div class="p-2 w-1/2">
-              <div class="relative">
-                <p class="lg:w-2/3 mx-auto leading-relaxed text base">Desire Language</p>
+                Desire Language
                 <!--This will be the language option for when the translator will use to translate to -->
-                <select type="text" id="lang_two" name="lang_two" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <select type="text" id="lang_two" name="lang_two">
                   <option value="EN">English</option>
                   <option value="AF">Afrikaans</option>
                   <option value="SQ">Albanian</option>
@@ -194,17 +220,19 @@
                   <option value="CY">Welsh</option>
                   <option value="XH">Xhosa</option>
                 </select>
+                </p>
               </div>
             </div>
-            <div class="p-2 w-full">
-              <div class="relative">
+            <div >
+              <label for="message">Message</label>
+              <div  >
                 <!--This will be the message that we will translate based on what the user will type-->
-                <label for="message" class="leading-7 text-sm text-gray-400">Message</label>
-                <textarea id="message" name="message" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                
+                <textarea id="message" name="message"class="inputbox" ></textarea>
               </div>
             </div>
-            <div class="p-2 w-full">
-              <button id="translate" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Translate</button>
+            <div >
+              <button id="translate" class="trans">Translate</button>
             </div>
           </div>
         </div>
@@ -217,3 +245,4 @@
   <script src="../assets/js/app.js"></script>
 
 
+<?php require('../components/inc/footer.php'); ?>
