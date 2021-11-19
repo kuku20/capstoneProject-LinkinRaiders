@@ -2,27 +2,21 @@
 	require ('../vendor/autoload.php');
 	require_once ('../config.php');
 	require_once ('../session.php');
+  // <?php require('../components/inc/footer.php'); ?>
  ?>
-<php?
+
 <!DOCTYPE html>
 <html lang="en-US", dir ="ltr">
 <head>
   <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE-edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <!--Call the CSS files to make it like the template on Tailbocks-->
   <!-- Link to the Tailblocks site to help create my translator https://tailblocks.cc/ -->
-  <!-- <link rel="stylesheet" href="../assets/tailwind.min.css"/> -->
-  <link rel="stylesheet" href="../css/homeStyle.css">
-  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <title>LinkinRaider</title>
   </head>
   <!-- This is code from Tailblocks known as Contact us that we will change to make our format-->
   <body class="bg-gray-900">
-  <?php require('../components/inc/sideBar.php'); ?>
-  <div class="home_content">
-    <div class="text">
     <!-- bg is background-color-shading-->
     <section class="text-gray-100 bg-gray-900 body-font relative">
       <div class="container px-5 py-24 mx-auto">
@@ -210,9 +204,7 @@
         </div>
       </div>
     </section>
-    </div>
-  </div>
   <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
   <script src="../assets/js/app.js"></script>
 ?>
-<?php require('../components/inc/footer.php'); ?>
+
