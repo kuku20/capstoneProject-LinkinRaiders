@@ -2,6 +2,8 @@
 	require ('../../vendor/autoload.php'); 
 	require_once ('../../config.php');
 	require_once ('../sessionc.php');
+  	require('sidebar.php');
+
 
 	$collection = $client->datattu->ttu;
 	$document = $collection->findOne(['username' => $_SESSION['username']]);
@@ -18,7 +20,7 @@
  	<link rel="stylesheet" href="../../css/updateProfile.css">
  </head>
  <body>
-<div class="hero">
+<div class="home_content">
 	<div class="form-box">
 		<form id="updatesetting" class="input-group" action="updateProfile.php" method="post" enctype="multipart/form-data">
 			<label for= "name"> Name:</label>

@@ -13,4 +13,5 @@
    
     <h1 class="text">userID: <?php echo $_SESSION['id'] ?></h1>
 </div>
+
 <?php require('../components/inc/footer.php'); ?>
